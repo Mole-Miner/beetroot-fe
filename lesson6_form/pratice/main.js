@@ -14,17 +14,21 @@ Array
 
 productForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  const newProduct = Array
+  const newProduct = createProduct();
+  addProductToList(newProduct);
+});
+
+function createProduct() {
+  return Array
     .from(productForm.elements)
     .filter(element => productFormFields.includes(element.id))
     .reduce((acc, curr) => ({
       [curr.id]: curr.value,
       ...acc
     }), { quality: productQuality });
-  createProduct(newProduct);
-});
+}
 
-function createProduct(newProduct) {
+function addProductToList(newProduct) {
   const pContainer = document.createElement('div');
   pContainer.style.padding = '1rem';
   pContainer.style.border = '1px solid black';
