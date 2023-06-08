@@ -1,28 +1,37 @@
-const title = document.getElementById('title');
-const version = document.getElementById('version');
-const model = document.getElementById('model');
-const newProduct = document.getElementById('product-new');
-const usedProduct = document.getElementById('product-used');
-
-const createBtn = document.getElementById('create-product-button');
 const productList = document.getElementById('product-list');
+const productForm = document.getElementById('create-product-form');
 
-createBtn.addEventListener('click', (e) => {
+const { quality: qualityFieldSet } = productForm.elements;
+const productFormFields = ['title', 'version', 'model', 'quality'];
+
+let productQuality = null;
+
+Array
+  .from(qualityFieldSet)
+  .forEach(qualityRadio => {
+    qualityRadio.addEventListener('change', (e) => productQuality = e.target.value);
+  });
+
+productForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  const createdProduct = document.createElement('div');
-
-  const pTitle = document.createElement('p');
-  pTitle.textContent = `Product title: ${title.value}`;
-
-  const pVersion = document.createElement('p');
-  pVersion.textContent = `Product Version: ${version.value}`;
-
-  const pModel = document.createElement('p');
-  pModel.textContent = `Product model: ${model.value}`;
-
-  const b = document.createElement('b');
-
-  createdProduct.append(pTitle, pVersion, pModel, b);
-
-  productList.appendChild(createdProduct);
+  const newProduct = Array
+    .from(productForm.elements)
+    .filter(element => productFormFields.includes(element.id))
+    .reduce((acc, curr) => ({
+      [curr.id]: curr.value,
+      ...acc
+    }), { quality: productQuality });
+  createProduct(newProduct);
 });
+
+function createProduct(newProduct) {
+  const pContainer = document.createElement('div');
+  pContainer.style.padding = '1rem';
+  pContainer.style.border = '1px solid black';
+  productFormFields.forEach(field => {
+    const pField = document.createElement('p');
+    pField.textContent = `Product ${field}: ${newProduct[field]}`;
+    pContainer.appendChild(pField);
+  });
+  productList.appendChild(pContainer);
+}
