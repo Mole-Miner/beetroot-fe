@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Lesson 6 Form</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='./styles.css'>
+</head>
+
+<body>
+  <a href="./admin.html">Admin page</a>
+  <br>
+  <br>
+
+  <form style="display: flex; flex-direction: column; width: 300px;">
+    <label for="firstname">Firstname</label>
+    <input type="text" name="firstname" id="firstname" placeholder="Enter user firstname" required>
+    <br>
+
+    <label for="lastname">Lastname</label>
+    <input type="text" name="lastname" id="lastname" placeholder="Enter user lastname" required>
+    <br>
+
+    <label for="role1">User role 1</label>
+    <input type="text" name="role1" id="role1" readonly value="Manager 1">
+    <br>
+
+    <label for="role2">User role 2</label>
+    <input type="text" name="rorole2le" id="role2" disabled value="Manager 2">
+    <br>
+
+    <label for="email">User email</label>
+    <input type="email" name="useremail" id="email" required>
+    <br>
+
+    <label for="password">User password</label>
+    <input type="password" name="password" id="password" required>
+    <br>
+
+    <label for="policy1">Site policy 1</label>
+    <input type="checkbox" name="policy1" id="policy1" required>
+    <br>
+
+    <label for="policy2">Site policy 2</label>
+    <input type="checkbox" name="policy2" id="policy2" checked>
+    <br>
+
+    <fieldset style="display: flex; flex-direction: row;">
+      <legend>User city</legend>
+
+      <input type="radio" name="city" id="kyiv-radio" value="Kyiv">
+      <label for="kyiv-city">Kyiv</label>
+
+      <input type="radio" name="city" id="lviv-radio" value="Lviv">
+      <label for="lviv-radio">Lviv</label>
+
+      <input type="radio" name="city" id="dnipro-radio" value="Dnipro">
+      <label for="dnipro-radio">Dnipro</label>
+    </fieldset>
+    <br>
+
+    <label for="user-role">Choose role</label>
+    <select id="user-role">
+      <option disabled>Guest 1</option>
+      <option selected disabled>Guest 2</option>
+
+      <optgroup label="developer">
+        <option>Developer 1</option>
+        <option>Developer 2</option>
+        <option>Developer 3</option>
+      </optgroup>
+
+      <optgroup label="manager">
+        <option>Manager 1</option>
+        <option>Manager 2</option>
+        <option>Manager 3</option>
+      </optgroup>
+
+      <optgroup label="admin">
+        <option disabled>Admin 1</option>
+        <option>Admin 2</option>
+        <option>Admin 3</option>
+      </optgroup>
+    </select>
+    <br>
+
+    <label for="file-upload">File upload</label>
+    <input type="file" name="user-avatar" id="file-upload">
+    <br>
+
+    <button type="submit">Send</button>
+  </form>
+</body>
+
+</html>
