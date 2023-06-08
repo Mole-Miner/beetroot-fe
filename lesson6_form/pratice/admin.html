@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Admin dashboard</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='./styles.css'>
+</head>
+
+<body>
+  <h1>IT Shop Admin panel</h1>
+  <br>
+
+  <form id="create-product-form" style="display: flex; flex-direction: column; width: 300px;">
+    <label for="title">Title</label>
+    <input type="text" name="title" id="title">
+
+    <br>
+
+    <label for="version">Version</label>
+    <input type="number" name="version" id="version">
+
+    <br>
+
+    <label for="model">Model</label>
+    <select name="model" id="model">
+      <optgroup label="AMD">
+        <option>AMD 1</option>
+        <option>AMD 2</option>
+        <option>AMD 3</option>
+      </optgroup>
+      <optgroup label="Intel">
+        <option>Intel 1</option>
+        <option>Intel 2</option>
+        <option>Intel 3</option>
+      </optgroup>
+    </select>
+
+    <br>
+
+    <fieldset>
+      <legend>New or Used?</legend>
+
+      <input type="radio" name="product-used" id="product-new" value="new">
+      <label for="product-new">New</label>
+
+      <input type="radio" name="product-used" id="product-used" value="used">
+      <label for="product-used">Used</label>
+    </fieldset>
+
+    <br>
+
+    <button id="create-product-button">Create</button>
+  </form>
+
+  <br>
+
+  <div id="product-list" style="width: 500px;">
+    <h2>Product list</h2>
+  </div>
+
+  <script src='main.js'></script>
+</body>
+
+</html>
