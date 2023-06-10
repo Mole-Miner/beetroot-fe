@@ -1,0 +1,121 @@
+/* *,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+/* p {
+  color: orange;
+} */
+
+#p1 span {
+  color: blue;
+}
+
+/* .title {
+  color: pink;
+} */
+
+.italic {
+  font-style: italic;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.crossed {
+  text-decoration: line-through;
+}
+
+.title {
+  color: lightblue;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.title-red {
+  color: red;
+}
+
+.title-pink {
+  color: pink;
+}
+
+.title-orange {
+  color: orange;
+}
+
+.text {
+  color: green;
+  font-size: 20px;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.text-center {
+  font-size: 30px;
+  text-align: center;
+}
+
+.text-end {
+  text-align: end;
+}
+
+.title,
+.text {
+  background-color: lightgray;
+}
+
+.container {
+  display: flex;
+  width: 500px;
+  height: 200px;
+  border: 5px solid orange;
+  border-radius: 14px;
+  /* border-width: 10px;
+  border-style: dashed;
+  border-color: orange; */
+}
+
+.container-content {
+  width: 300px;
+}
+
+.container .text {
+  background-color: yellow;
+}
+
+.list {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 0;
+  list-style-type: none;
+}
+
+.padding {
+  padding: 10px 15px 20px 30px;
+  /* padding-left: 30px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 20px; */
+}
+
+.margin {
+  margin: 10px 15px 20px 30px;
+  /* margin-left: 30px;
+  margin-right: 15px;
+  margin-top: 10px;
+  margin-bottom: 20px; */
+}
+
+.wrapper {
+  padding: 10px 100px;
+}
