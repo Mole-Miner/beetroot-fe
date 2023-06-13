@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Attribute Selectors</title>
+  <link rel="stylesheet" href="../styles/reset.css">
+  <link rel="stylesheet" href="../styles/attribute-selectors.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Attribute selectors</h1>
+    <a href="../index.html">Go to home page</a>
+    <br>
+    <a href="./simple-selectors.html">Go to simple selectors</a>
+    <br>
+    <a href="./complex-selectors.html">Go to complex selectors</a>
+  </div>
+
+  <!-- Attribute selector -->
+  <div class="container">
+    <p data>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, exercitationem, consequatur eligendi
+      perferendis at
+      consequuntur recusandae amet, dolorem vel eaque voluptatem aliquid iure quas odio vero unde quidem quos ab.</p>
+  </div>
+
+  <!-- Attribute value selector -->
+  <div class="container">
+    <p data-color="blue">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus iure esse officiis sequi
+      inventore possimus officia quae laborum provident, cum eum omnis beatae! Exercitationem repudiandae excepturi
+      suscipit voluptatem vel eum?</p>
+  </div>
+
+  <!-- Attribute ~ value selector -->
+  <div class="container">
+    <p data-description="This is green page">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem natus
+      aliquid, voluptates maxime at illo minima voluptatibus quisquam optio temporibus repudiandae praesentium hic amet
+      saepe culpa nemo eligendi eius numquam!</p>
+    <img data-description="This is green page" alt="some img">
+  </div>
+
+  <!-- Attribute | value selector -->
+  <div class="container">
+    <p data-position="top">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem natus
+      aliquid, voluptates maxime at illo minima voluptatibus quisquam optio temporibus repudiandae praesentium hic amet
+      saepe culpa nemo eligendi eius numquam!</p>
+
+    <p data-position="top-left">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem natus
+      aliquid, voluptates maxime at illo minima voluptatibus quisquam optio temporibus repudiandae praesentium hic amet
+      saepe culpa nemo eligendi eius numquam!</p>
+  </div>
+
+  <!-- Attribute ^ value selector -->
+  <div class="container">
+    <p class="text-m text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem natus
+      aliquid, voluptates maxime at illo minima voluptatibus quisquam optio temporibus repudiandae praesentium hic amet
+      saepe culpa nemo eligendi eius numquam!</p>
+
+    <p class="m-text text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem natus
+      aliquid, voluptates maxime at illo minima voluptatibus quisquam optio temporibus repudiandae praesentium hic amet
+      saepe culpa nemo eligendi eius numquam!</p>
+  </div>
+
+  <!-- Attribute $ value selector -->
+  <div class="container">
+    <p class="text text-m">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem natus
+      aliquid, voluptates maxime at illo minima voluptatibus quisquam optio temporibus repudiandae praesentium hic amet
+      saepe culpa nemo eligendi eius numquam!</p>
+
+    <p class="text-m text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem natus
+      aliquid, voluptates maxime at illo minima voluptatibus quisquam optio temporibus repudiandae praesentium hic amet
+      saepe culpa nemo eligendi eius numquam!</p>
+  </div>
+
+  <!-- Attribute * value selector -->
+  <div class="container">
+    <p class="large">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem natus
+      aliquid, voluptates maxime at illo minima voluptatibus quisquam optio temporibus repudiandae praesentium hic amet
+      saepe culpa nemo eligendi eius numquam!</p>
+
+    <p class="low">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem natus
+      aliquid, voluptates maxime at illo minima voluptatibus quisquam optio temporibus repudiandae praesentium hic amet
+      saepe culpa nemo eligendi eius numquam!</p>
+  </div>
+
+  <!-- Attribute value case-insensetive selector -->
+  <div class="container">
+    <p class="SMall">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem natus
+      aliquid, voluptates maxime at illo minima voluptatibus quisquam optio temporibus repudiandae praesentium hic amet
+      saepe culpa nemo eligendi eius numquam!</p>
+
+    <p class="Small">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem natus
+      aliquid, voluptates maxime at illo minima voluptatibus quisquam optio temporibus repudiandae praesentium hic amet
+      saepe culpa nemo eligendi eius numquam!</p>
+
+    <p class="small">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem natus
+      aliquid, voluptates maxime at illo minima voluptatibus quisquam optio temporibus repudiandae praesentium hic amet
+      saepe culpa nemo eligendi eius numquam!</p>
+  </div>
+</body>
+
+</html>
