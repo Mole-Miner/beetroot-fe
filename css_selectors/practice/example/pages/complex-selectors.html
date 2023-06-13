@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Complex Selectors</title>
+  <link rel="stylesheet" href="../styles/reset.css">
+  <link rel="stylesheet" href="../styles/complex-selectors.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Complex selectors</h1>
+    <a href="../index.html">Go to home page</a>
+    <br>
+    <a href="./simple-selectors.html">Go to simple selectors</a>
+    <br>
+    <a href="./attribute-selectors.html">Go to attribute selectors</a>
+  </div>
+
+  <!-- Grouping selector -->
+  <div class="container">
+    <h3>Title 3</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptates eligendi quas amet impedit magnam sequi
+      cumque aspernatur veritatis obcaecati porro facere similique deleniti nobis quidem, quisquam assumenda voluptate
+      quae?</p>
+    <p class="class2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum eligendi autem, sint dolore optio
+      porro repellat nisi explicabo distinctio nam aliquam repellendus enim amet, qui hic, iusto doloribus. Sed,
+      impedit?</p>
+    <p id="#p2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni assumenda doloremque quo fugit fuga
+      beatae. Praesentium similique pariatur accusantium repudiandae earum quasi, ullam, facilis officiis hic
+      consectetur iste aspernatur excepturi.</p>
+  </div>
+
+  <!-- Compound selector -->
+  <div class="container">
+    <p class="class3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam fugiat, aspernatur sint repudiandae
+      laudantium libero vero expedita nobis hic recusandae quibusdam illum voluptates labore neque id nesciunt
+      architecto quasi ipsam.</p>
+  </div>
+
+  <!-- Descendant combinator -->
+  <div class="container">
+    <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque, unde natus quam repudiandae quod itaque
+      explicabo atque aperiam debitis doloribus at eveniet culpa vitae, libero magni cum nulla. Nesciunt, veritatis.
+      <span>This is descendant element</span>
+    </h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia nobis, reiciendis aut, eveniet magnam
+      praesentium exercitationem aperiam quos odit odio voluptatem velit quod! Minima necessitatibus dolorem repellat
+      voluptatum, voluptates ad? <span>This is descendant element</span></p>
+  </div>
+
+  <!-- Child combinator -->
+  <div class="container">
+    <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque, unde natus quam repudiandae quod itaque
+      explicabo atque aperiam debitis doloribus at eveniet culpa vitae, libero magni cum nulla. Nesciunt, veritatis.
+    </h3>
+
+    <span>This is child of div</span>
+    <span>This is child of div</span>
+    <span>This is child of div</span>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia nobis, reiciendis aut, eveniet magnam
+      praesentium exercitationem aperiam quos odit odio voluptatem velit quod! Minima necessitatibus dolorem repellat
+      voluptatum, voluptates ad? <span>This is descendant element</span></p>
+  </div>
+
+  <!-- General sibling combinator -->
+  <div class="container">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas laboriosam quibusdam cumque, neque distinctio
+      dolorum voluptatem ratione! Assumenda enim nulla rem aspernatur eaque voluptate dolore, quidem quia, recusandae
+      facilis quasi?</p>
+
+    <div>
+      <span>Span 1</span>
+    </div>
+
+    <section>
+      <span>Span 2</span>
+    </section>
+
+    <span>General sibling combinator</span>
+  </div>
+
+  <!-- Adjacent sibling combinator -->
+  <div class="container">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas laboriosam quibusdam cumque, neque distinctio
+      dolorum voluptatem ratione! Assumenda enim nulla rem aspernatur eaque voluptate dolore, quidem quia, recusandae
+      facilis quasi?</p>
+
+    <div>
+      <span>Span 1</span>
+    </div>
+
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse tempora facere eos similique beatae magni natus
+      odit eum consequatur laborum, doloremque accusamus nobis corrupti, fugiat quia mollitia debitis deserunt non.</p>
+  </div>
+</body>
+
+</html>
