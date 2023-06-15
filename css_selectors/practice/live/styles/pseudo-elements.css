@@ -1,0 +1,51 @@
+/* ::before */
+#before>p::before {
+  content: "Before";
+  font-size: 50px;
+  color: violet;
+}
+
+/* ::after */
+#after>p::after {
+  content: "10";
+  font-size: 40px;
+  color: blue;
+}
+
+/* ::first-letter */
+#first-letter>p::first-letter {
+  color: orange;
+  font-size: 60px;
+  font-weight: 600;
+}
+
+/* ::first-line */
+#first-line>p::first-line {
+  color: red;
+}
+
+/* ::marker */
+/* ::marker {
+  color: crimson;
+} */
+
+/* ul {
+  padding-left: 40px;
+}
+
+li::marker {
+  color: crimson;
+} */
+#marker-example>ul {
+  padding-left: 20px;
+}
+
+#marker-example>ul>li::marker {
+  color: crimson;
+}
+
+/* ::selection */
+#selection-example>p::selection {
+  color: red;
+  background-color: pink;
+}
