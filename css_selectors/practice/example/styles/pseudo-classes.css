@@ -1,0 +1,64 @@
+/* :link */
+#navigation a:link {
+  color: orange;
+}
+
+/* :visited */
+#navigation a:visited {
+  color: red;
+}
+
+/* :active */
+#navigation a:active {
+  color: blue;
+}
+
+/* :hover */
+#hover-example:hover {
+  background-color: lightcoral;
+}
+
+/* :not */
+#not-example>p:not(.class1) {
+  color: orange;
+}
+
+/* nth-child(n) */
+#nth-child-example>p:nth-child(2) {
+  color: purple;
+}
+
+/* 
+required,
+checked,
+disabled,
+invalid,
+focus */
+#form-example>form>input:required {
+  background-color: blue;
+}
+
+#form-example>form>input:checked {
+  width: 100px;
+  height: 100px;
+}
+
+#form-example>form>*:disabled {
+  background-color: lightblue;
+}
+
+#form-example>form>*:enabled {
+  background-color: yellow;
+}
+
+#form-example>form>input:valid {
+  border: 2px solid green;
+}
+
+#form-example>form>input:invalid {
+  border: 2px solid red;
+}
+
+#form-example>form>input:focus {
+  background-color: lightcoral;
+}
