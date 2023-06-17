@@ -5,18 +5,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CSS Homework</title>
+  <!-- Normilize styles -->
+  <link rel="stylesheet" href="./styles/reset.css">
+  <!-- Text styles -->
+  <link rel="stylesheet" href="./styles/text.css">
+  <!-- Box styles -->
+  <link rel="stylesheet" href="./styles/box.css">
+  <!-- Flex styles -->
+  <link rel="style/sheet" href="./styles/flex.css">
+  <!-- Page styles -->
   <link rel="stylesheet" href="./styles/styles.css">
 </head>
 
 <body>
   <!-- Site navigation -->
-  <header>
-    <nav class="flex justify-center align-center navigation">
+  <header class="padding-inline">
+    <nav class="flex justify-center align-center text navigation">
       <a class="text" href="#home">Home</a>
-      <a class="text text-gray" href="#about">About me</a>
-      <a class="text text-gray" href="#skills">Skills</a>
-      <a class="text text-gray" href="#portfolio">Portfolio</a>
-      <a class="text text-gray" href="#contacts">Contacts</a>
+      <a class="text-gray" href="#about">About me</a>
+      <a class="text-gray" href="#skills">Skills</a>
+      <a class="text-gray" href="#portfolio">Portfolio</a>
+      <a class="text-gray" href="#contacts">Contacts</a>
     </nav>
   </header>
 
@@ -31,12 +40,14 @@
     <!-- About -->
     <section class="padding-inline padding-block bg-gray" id="about">
       <h2 class="title title-m text-center mb-50">About me</h2>
-      <p class="text text-center mb-30">Hi, I'm Denis – UX/UI designer from Minsk.
-        I'm interested in design and everything connected with it</p>
-      <p class="text text-center mb-30">I'm studying at courses "Web and mobile design
-        interfaces" in IT-Academy.</p>
-      <p class="text text-center mb-30">Ready to implement excellent projects
-        with wonderful people.</p>
+      <div class="text text-center">
+        <p class="mb-30">Hi, I'm Denis – UX/UI designer from Minsk.
+          I'm interested in design and everything connected with it</p>
+        <p class="mb-30">I'm studying at courses "Web and mobile design
+          interfaces" in IT-Academy.</p>
+        <p class=" mb-30">Ready to implement excellent projects
+          with wonderful people.</p>
+      </div>
     </section>
 
     <!-- Skills -->
