@@ -44,7 +44,7 @@ a {
 
 .site-main {
   display: grid;
-  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  grid-template-columns: repeat(2, minmax(400px, 1fr));
   gap: var(--gap);
   width: 100%;
   padding: var(--gap);
@@ -102,6 +102,30 @@ a {
   flex-direction: column-reverse;
 }
 
+.fw-section {
+  flex-basis: 200px;
+  height: 50px;
+  background-color: lightblue;
+}
+
+#fw-wrap {
+  flex-wrap: wrap;
+}
+
+#fw-nowrap {
+  flex-wrap: nowrap;
+}
+
+#fw-nowrap>section {
+  min-width: 300px;
+  height: 50px;
+  background-color: lightblue;
+}
+
+#fw-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
 #jc-start {
   justify-content: flex-start;
 }
@@ -124,4 +148,42 @@ a {
 
 #ai-end {
   align-items: flex-end;
+}
+
+.fx-basis {
+  flex-basis: 100px;
+}
+
+.fx-grow {
+  flex-grow: 3;
+}
+
+#fx-shrink section {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 200px;
+  height: 50px;
+  background-color: lightblue;
+}
+
+#fx-shrink section:nth-child(2) {
+  flex-shrink: 3;
+}
+
+#fx section:nth-child(1) {
+  flex: 1 1 50px;
+  height: 50px;
+  background-color: lightblue;
+}
+
+#fx section:nth-child(2) {
+  flex: 2 0 50px;
+  height: 50px;
+  background-color: lightblue;
+}
+
+#fx section:nth-child(3) {
+  flex: 0 2 50px;
+  height: 50px;
+  background-color: lightblue;
 }
