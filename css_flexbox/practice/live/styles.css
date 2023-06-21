@@ -1,0 +1,200 @@
+.fd {
+  display: flex;
+  margin: 1rem;
+  /* flex-direction: row;
+  justify-content: flex-start; */
+  width: 400px;
+  height: 300px;
+  /* gap: 1rem; */
+  background-color: lightcoral;
+}
+
+.jc-start {
+  justify-content: flex-start;
+}
+
+.jc-center {
+  justify-content: center;
+}
+
+.jc-end {
+  justify-content: flex-end;
+}
+
+.jc-around {
+  justify-content: space-around;
+}
+
+.jc-between {
+  justify-content: space-between;
+}
+
+.ai-start {
+  align-items: flex-start;
+}
+
+.ai-center {
+  align-items: center;
+}
+
+.ai-end {
+  align-items: flex-end;
+}
+
+.box {
+  width: 50px;
+  height: 50px;
+  background-color: lightblue;
+}
+
+.fd-column {
+  flex-direction: column;
+}
+
+.fd-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.fd-column-reverse {
+  flex-direction: column-reverse;
+}
+
+.fd1 {
+  display: flex;
+  margin: 1rem;
+  width: 400px;
+  gap: 1rem;
+  background-color: lightcoral;
+}
+
+.box1 {
+  min-width: 180px;
+  height: 50px;
+  background-color: lightblue;
+}
+
+.fw-wrap {
+  flex-wrap: wrap;
+}
+
+.fw-nowrap {
+  flex-wrap: nowrap;
+}
+
+.fw-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+.fd2 {
+  display: flex;
+  /* flex-direction: row; */
+  /* justify-content: flex-start; */
+  margin: 1rem;
+  width: 400px;
+  height: 100px;
+  /* gap: 1rem; */
+  background-color: lightcoral;
+}
+
+#flex-basis>section {
+  flex-basis: 100px;
+  /* height: 50px; */
+  background-color: lightblue;
+}
+
+#flex-grow>section:nth-child(1) {
+  flex-grow: 1;
+  background-color: orange;
+}
+
+#flex-grow>section:nth-child(2) {
+  flex-grow: 4;
+  background-color: red;
+}
+
+#flex-grow>section:nth-child(3) {
+  flex-grow: 1;
+  background-color: green;
+}
+
+#flex-shrink>section {
+  flex-basis: 100px;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+#flex-shrink>section:nth-child(1) {
+  background-color: orange;
+}
+
+#flex-shrink>section:nth-child(2) {
+  flex-shrink: 3;
+  background-color: red;
+}
+
+#flex-shrink>section:nth-child(3) {
+  background-color: green;
+}
+
+#flex-shrink>section:nth-child(4) {
+  background-color: purple;
+}
+
+#flex-shrink>section:nth-child(5) {
+  background-color: blue;
+}
+
+#flex-shrink>section:nth-child(6) {
+  background-color: yellow;
+}
+
+#flex {
+  /* width: 800px; */
+}
+
+#flex>section {
+  flex: 1 1 100px;
+  background-color: lightgreen;
+  /* flex-grow: 1; */
+  /* flex-shrink: 1; */
+  /* flex-basis: 100px; */
+}
+
+#flex>section:nth-child(2) {
+  flex-shrink: 2;
+}
+
+#order>section {
+  flex: 1 1 100px;
+  background-color: lightgreen;
+}
+
+#order>section:nth-child(1) {
+  background-color: orange;
+  order: 1;
+}
+
+#order>section:nth-child(2) {
+  background-color: red;
+  order: 2;
+}
+
+#order>section:nth-child(3) {
+  background-color: green;
+  order: 3;
+}
+
+#orderk>section:nth-child(4) {
+  background-color: purple;
+  order: 4;
+}
+
+#order>section:nth-child(5) {
+  background-color: blue;
+  order: 5;
+}
+
+#order>section:nth-child(6) {
+  background-color: yellow;
+  order: 6;
+}

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Flexbox</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="site-nav">
+      <a href="#jc">Justify content</a>
+      <a href="#ai">Align items</a>
+      <a href="#fx">Flex</a>
+    </nav>
+  </header>
+
+  <main class="site-main">
+    <article class="card">
+      <header id="fd-row" class="card-header">
+        <section class="box">1</section>
+        <section class="box">2</section>
+        <section class="box">3</section>
+      </header>
+      <main class="card-body">
+        <h3>Row direction</h3>
+        <p>Puts items horizonatly</p>
+      </main>
+    </article>
+
+    <article class="card">
+      <header id="fd-row-reverse" class="card-header">
+        <section class="box">1</section>
+        <section class="box">2</section>
+        <section class="box">3</section>
+      </header>
+      <main class="card-body">
+        <h3>Row reverse direction</h3>
+        <p>Puts items reverse horizontaly</p>
+      </main>
+    </article>
+
+    <article class="card">
+      <header id="fd-column" class="card-header">
+        <section class="box">1</section>
+        <section class="box">2</section>
+        <section class="box">3</section>
+      </header>
+      <main class="card-body">
+        <h3>Justify start</h3>
+        <p>Puts items in column</p>
+      </main>
+    </article>
+
+    <article class="card">
+      <header id="fd-column-reverse" class="card-header">
+        <section class="box">1</section>
+        <section class="box">2</section>
+        <section class="box">3</section>
+      </header>
+      <main class="card-body">
+        <h3>Justify start</h3>
+        <p>Puts items in reversed column</p>
+      </main>
+    </article>
+
+    <article class="card">
+      <header id="fw-wrap" class="card-header">
+        <section class="fw-section">1</section>
+        <section class="fw-section">2</section>
+        <section class="fw-section">3</section>
+      </header>
+      <main class="card-body">
+        <h3>Flex wrap</h3>
+        <p>Move items to a new line if they don't fit</p>
+      </main>
+    </article>
+
+    <article class="card">
+      <header id="fw-nowrap" class="card-header">
+        <section></section>
+        <section></section>
+        <section></section>
+      </header>
+      <main class="card-body">
+        <h3>Flex nowrap</h3>
+        <p>Don't move items on a new line if they don't fit</p>
+      </main>
+    </article>
+
+    <article class="card">
+      <header id="fw-wrap-reverse" class="card-header">
+        <section class="fw-section">1</section>
+        <section class="fw-section">2</section>
+        <section class="fw-section">3</section>
+      </header>
+      <main class="card-body">
+        <h3>Flex wrap reverse</h3>
+        <p>Move items to a new line in reversed order if they don't fit</p>
+      </main>
+    </article>
+
+    <article class="card">
+      <header id="jc-start" class="card-header">
+        <section class="box"></section>
+        <section class="box"></section>
+        <section class="box"></section>
+      </header>
+      <main class="card-body">
+        <h3>Justify start</h3>
+        <p>Puts items at the begin of main axis</p>
+      </main>
+    </article>
+
+    <article class="card">
+      <header id="jc-center" class="card-header">
+        <section class="box"></section>
+        <section class="box"></section>
+        <section class="box"></section>
+      </header>
+      <main class="card-body">
+        <h3>Justify center</h3>
+        <p>Puts items at the center of main axis</p>
+      </main>
+    </article>
+
+    <article class="card">
+      <header id="jc-end" class="card-header">
+        <section class="box"></section>
+        <section class="box"></section>
+        <section class="box"></section>
+      </header>
+      <main class="card-body">
+        <h3>Justify end</h3>
+        <p>Puts items at the end of main axis</p>
+      </main>
+    </article>
+
+    <article class="card">
+      <header id="ai-start" class="card-header">
+        <section class="box"></section>
+        <section class="box"></section>
+        <section class="box"></section>
+      </header>
+      <main class="card-body">
+        <h3>Align start</h3>
+        <p>Puts items at the begin of cross axis</p>
+      </main>
+    </article>
+
+    <article class="card">
+      <header id="ai-center" class="card-header">
+        <section class="box"></section>
+        <section class="box"></section>
+        <section class="box"></section>
+      </header>
+      <main class="card-body">
+        <h3>Align center</h3>
+        <p>Puts items at the center of cross axis</p>
+      </main>
+    </article>
+
+    <article class="card">
+      <header id="ai-end" class="card-header">
+        <section class="box"></section>
+        <section class="box"></section>
+        <section class="box"></section>
+      </header>
+      <main class="card-body">
+        <h3>Align end</h3>
+        <p>Puts items at the end of cross axis</p>
+      </main>
+    </article>
+
+    <article class="card">
+      <header id="fx-basis" class="card-header">
+        <section class="box">50px</section>
+        <section class="box fx-basis">100px</section>
+        <section class="box">50px</section>
+      </header>
+      <main class="card-body">
+        <h3>Flex basis</h3>
+        <p>Set the initial length of flex item</p>
+      </main>
+    </article>
+
+    <article class="card">
+      <header id="fx-grow" class="card-header">
+        <section class="box">box</section>
+        <section class="box fx-grow">3*box</section>
+        <section class="box">box</section>
+      </header>
+      <main class="card-body">
+        <h3>Flex grow</h3>
+        <p>Specify how much the item will grow relative to the rest of the flexible items inside the same container</p>
+      </main>
+    </article>
+
+    <article class="card">
+      <header id="fx-shrink" class="card-header">
+        <section>box</section>
+        <section>box</section>
+        <section>box</section>
+      </header>
+      <main class="card-body">
+        <h3>Flex shrink</h3>
+        <p>Specify how the item will shrink relative to the rest of the flexible items inside the same container</p>
+      </main>
+    </article>
+
+    <article class="card">
+      <header id="fx" class="card-header">
+        <section>box</section>
+        <section>box</section>
+        <section>box</section>
+      </header>
+      <main class="card-body">
+        <h3>Flex</h3>
+        <p>Shorthand for flex-grow flex-shrink flex-basis</p>
+      </main>
+    </article>
+  </main>
+</body>
+
+</html>
