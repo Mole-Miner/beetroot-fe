@@ -46,7 +46,14 @@
   grid-template: repeat(4, minmax(50px, 1fr)) / repeat(3, minmax(50px, 1fr));
   /* grid-template-columns: repeat(3, minmax(50px, 1fr));
   grid-template-rows: repeat(4, minmax(50px, 1fr)); */
-  gap: 1rem;
+  grid-template-areas:
+    "robert sean sean"
+    "john john dave"
+    "john john dave"
+    "leonard leonard rob";
+  gap: 1.5rem;
+  padding: 1rem;
+
 }
 
 .still-life>img {
@@ -54,13 +61,15 @@
 }
 
 .still-life>img:nth-child(2) {
-  grid-column: 2 / 4;
+  grid-area: sean;
+  /* grid-column: 2 / 4; */
   /* grid-column-start: 2;
   grid-column-end: 4; */
 }
 
 .still-life>img:nth-child(3) {
-  grid-area: 2 / 1 / 4 / 3;
+  grid-area: john;
+  /* grid-area: 2 / 1 / 4 / 3; */
   /* grid-row-start: 2;
   grid-row-end: 4;
   grid-column-start: 1;
@@ -68,7 +77,8 @@
 }
 
 .still-life>img:nth-child(4) {
-  grid-area: 2 / 3 / 4 / 4;
+  grid-area: dave;
+  /* grid-area: 2 / 3 / 4 / 4; */
   /* grid-row-start: 2;
   grid-row-end: 4;
   grid-column-start: 3;
@@ -76,7 +86,8 @@
 }
 
 .still-life>img:nth-child(5) {
-  grid-area: 4 / 1 / 5 / 3;
+  grid-area: leonard;
+  /* grid-area: 4 / 1 / 5 / 3; */
   /* grid-row-start: 4;
   grid-row-end: 5;
   grid-column-start: 1;
