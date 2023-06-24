@@ -119,6 +119,7 @@
 #example-grid-cell {
   height: 600px;
   grid-template: repeat(6, 100px) / repeat(4, 100px);
+  /* grid-template: [line1-start] 100px [line1-end line2-start] 60px [line2-end line3-start] 40px [line3-end line4-start] 80px / repeat(6, 100x); */
 }
 
 #example-grid-cell>section:nth-child(1) {
