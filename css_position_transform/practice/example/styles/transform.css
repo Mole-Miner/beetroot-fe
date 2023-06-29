@@ -1,0 +1,157 @@
+:root {
+  --animation-duration: 10s;
+  --animation-iteration: infinite;
+}
+
+.container {
+  display: flex;
+  height: 500px;
+  padding: 1rem;
+  perspective: 800px;
+}
+
+.subject {
+  width: 100px;
+  height: 100px;
+  background-color: lightcoral;
+}
+
+.translate {
+  /* transform: translateX(50px); */
+  /* transform: translateY(50px); */
+  /* transform: translateZ(50px); */
+  /* transform: translate(-100px, 100px); */
+  /* translate: 50px 100px; */
+}
+
+.scale:hover {
+  /* transform: scale(1, 1.5); */
+  /* transform: scale(1.2); */
+  /* transform: scaleX(1.2); */
+  /* transform: scaleY(1.2); */
+  /* scale: 1.5 2; */
+}
+
+.skew {
+  /* transform: skew(10deg); */
+  /* transform: skew(10deg, 20deg); */
+  /* transform: skewX(60deg); */
+  /* transform: skewY(60deg); */
+}
+
+.rotate {
+  /* transform: rotate(45deg); */
+  /* transform: rotateX(45deg); */
+  /* transform: rotateY(45deg); */
+}
+
+.translate--x,
+.translate--y,
+.translate--xy,
+.skew--xy,
+.rotate--x,
+.rotate--y,
+.rotate--z {
+  animation-duration: var(--animation-duration);
+  animation-iteration-count: var(--animation-iteration);
+}
+
+.translate--x {
+  animation-name: translate-x;
+}
+
+.translate--y {
+  animation-name: translate-y;
+}
+
+.translate--xy {
+  animation-name: translate-xy;
+}
+
+.skew--xy {
+  animation-name: skew-xy;
+}
+
+.rotate--x {
+  animation-name: rotate-x;
+}
+
+.rotate--y {
+  animation-name: rotate-y;
+}
+
+.rotate--z {
+  animation-name: rotate-z;
+}
+
+@keyframes translate-x {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(200px)
+  }
+}
+
+@keyframes translate-y {
+  from {
+    transform: translateY(0)
+  }
+
+  to {
+    transform: translateY(200px)
+  }
+}
+
+
+@keyframes translate-xy {
+  from {
+    transform: translate(0, 0);
+  }
+
+  to {
+    transform: translate(300px, 300px);
+  }
+}
+
+@keyframes skew-xy {
+  from {
+    transform: skew(0);
+  }
+
+  to {
+    transform: skew(90deg);
+  }
+}
+
+
+@keyframes rotate-x {
+  from {
+    transform: rotate3d(1, 0, 0, 0deg);
+  }
+
+  to {
+    transform: rotate3d(1, 0, 0, 360deg);
+  }
+}
+
+@keyframes rotate-y {
+  from {
+    transform: rotate3d(0, 1, 0, 0deg);
+  }
+
+  to {
+    transform: rotate3d(0, 1, 0, 360deg);
+  }
+}
+
+@keyframes rotate-z {
+  from {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+
+  to {
+    transform: rotate3d(0, 0, 1, 360deg);
+  }
+}
