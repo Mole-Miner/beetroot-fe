@@ -1,0 +1,26 @@
+@font-face {
+  font-family: Poppins;
+  src: url('../assets/fonts/poppins/Poppins-Regular.ttf');
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --transition-duration: 250ms;
+  --regular-padding: 10px;
+  --primary-color: gray;
+  --primary-light-color: whitesmoke;
+  --accent-color: #3F00FF;
+  --warn-color: #C70039;
+}
+
+html,
+body {
+  font-family: 'Poppins', sans-serif;
+}
