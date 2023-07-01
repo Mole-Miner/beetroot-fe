@@ -1,0 +1,52 @@
+@use './variables' as var;
+@use './text' as text;
+
+.container {
+  display: grid;
+  grid-template: repeat(2, minmax(100px, auto)) / repeat(2, minmax(200px, 1fr));
+  grid-template-areas:
+    "header header"
+    "avatar about";
+  row-gap: 40px;
+
+  // .container__header
+  &__header {
+    grid-area: header;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__title {
+    @include text.text-uppercase;
+    // @include text.transform-text(uppercase);
+    // text-transform: uppercase;
+    // text-transform: lowercase;
+    // @include text.text-uppercase;
+  }
+
+  &__subtitle {
+    @include text.text-lowercase;
+    // @include text.transform-text(lowercase);
+    // text-transform: lowercase;
+    // @include text.transform-text(uppercase);
+    // @include text.text-uppercase;
+  }
+
+  // .container__avatar
+  &__avatar {
+    grid-area: avatar;
+    width: 300px;
+  }
+
+  // .container__about
+  &__about {
+    grid-area: about;
+  }
+
+  &__view-btn {
+    @include text.text-uppercase;
+  }
+}

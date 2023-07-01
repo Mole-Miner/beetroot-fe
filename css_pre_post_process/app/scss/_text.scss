@@ -1,0 +1,70 @@
+@use './variables' as var;
+
+@mixin text-color($color) {
+  color: $color;
+}
+
+@mixin transform-text($case) {
+  text-transform: $case;
+}
+
+@mixin text-uppercase {
+  @include transform-text(uppercase);
+  // text-transform: uppercase;
+  font-style: italic;
+}
+
+@mixin text-lowercase {
+  @include transform-text(lowercase);
+  letter-spacing: 3px;
+  font-weight: 700;
+  // text-transform: lowercase;
+}
+
+// @mixin transform-text($case: lowercase) {
+//   text-transform: $case;
+// }
+
+// @mixin text-uppercase {
+//   text-transform: uppercase;
+// }
+
+// @mixin text-case($case) {
+//   text-transform: $case;
+// }
+
+// @mixin text-uppercase {
+//   @include text-case(uppercase);
+// }
+
+// @mixin text-lowercase {
+//   @include text-case(lowercase);
+// }
+
+.text {
+  letter-spacing: 1px;
+}
+
+.text--uppercase {
+  text-transform: uppercase;
+}
+
+.text--gold {
+  @include text-color(var.$gold);
+}
+
+.text--gray {
+  @include text-color(var.$gray);
+}
+
+.text--dark-gray {
+  @include text-color(var.$dark-gray);
+}
+
+.text--black {
+  @include text-color(var.$black);
+}
+
+.text--white {
+  @include text-color(var.$white);
+}
