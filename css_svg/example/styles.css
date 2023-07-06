@@ -1,0 +1,54 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+svg {
+  /* border: 1px solid black; */
+  /* stroke: orange;
+  fill: transparent; */
+  stroke-width: 5;
+  color: white;
+}
+
+svg text {
+  fill: white;
+  font-size: 2em;
+  font-weight: 600;
+}
+
+.comment {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background-color: green;
+}
+
+.comment>svg {
+  position: absolute;
+  top: 140px;
+  transform: rotate(-45deg);
+  fill: green;
+  stroke: green;
+  border: none;
+}
+
+#rect1 {
+  fill: url(#Gradient1);
+}
+
+.stop1 {
+  stop-color: red;
+}
+
+.stop2 {
+  stop-color: orange;
+  stop-opacity: .5;
+}
+
+.stop3 {
+  stop-color: blue;
+}
