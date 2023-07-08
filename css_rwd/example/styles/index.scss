@@ -10,6 +10,62 @@ $mobile-inline-padding: 10px;
   box-sizing: border-box;
 }
 
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  width: 100%;
+  height: 80px;
+}
+
+.site-sidebar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateX(-100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  height: 100%;
+  transition: transform .5s;
+  background-color: orange;
+
+  &--open {
+    transform: translateX(0);
+    // width: 25%;
+  }
+
+  &__close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+}
+
+$mobile-screen: 320px;
+$tablet-screen: 768px;
+$desktop-screen: 1440px;
+
+// @media (min-width: $mobile-screen) and (max-width: $tablet-screen) {
+//   .site-sidebar {
+//     &--open {
+//       width: 100%;
+//     }
+//   }
+// }
+
+// @media (min-width: $tablet-screen) and (max-width: $desktop-screen) {
+//   .site-sidebar {
+//     &--open {
+//       width: 50%;
+//     }
+//   }
+// }
+
 .navigation-wrapper {
   display: flex;
   justify-content: space-between;
@@ -25,6 +81,20 @@ $mobile-inline-padding: 10px;
   &__menu {
     display: flex;
     gap: 42px;
+  }
+
+  &__hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 34px;
+    height: 20px;
+  }
+
+  &__hamburger-line {
+    width: 100%;
+    height: 1px;
+    background-color: black;
   }
 }
 
@@ -190,7 +260,24 @@ $mobile-inline-padding: 10px;
   }
 
   .navigation__menu {
-    display: none;
+    position: fixed;
+    right: 0;
+    transform: translateX(400px);
+    // display: flex;
+    // flex-direction: column;
+    // height: 100vh;
+    // z-index: 2;
+    // width: 100%;
+    // height: 100%;
+    // background-color: orange;
+  }
+
+  .navigation__menu--active {
+    transform: translateX(-200px);
+  }
+
+  .navigation__hamburger {
+    display: flex;
   }
 
   .latest-posts__body {
@@ -224,7 +311,17 @@ $mobile-inline-padding: 10px;
   }
 
   .navigation__menu {
-    display: none;
+    position: fixed;
+    right: 0;
+    transform: translateX(400px);
+  }
+
+  .navigation__menu--active {
+    transform: translateX(-200px);
+  }
+
+  .navigation__hamburger {
+    display: flex;
   }
 
   .blog {

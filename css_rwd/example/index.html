@@ -14,10 +14,24 @@
 </head>
 
 <body>
-  <header class="navigation-wrapper">
+  <header class="site-header">
+    <h1>manifest</h1>
+    <button id="menu-hamburger">Menu</button>
+  </header>
+
+  <aside id="sidebar-menu" class="site-sidebar">
+    <a href="">home</a>
+    <a href="">about</a>
+    <a href="">works</a>
+    <a href="">blog</a>
+    <a href="">contact</a>
+
+    <button id="sidebar-close-btn" class="site-sidebar__close">Close menu</button>
+  </aside>
+  <!-- <header class="navigation-wrapper">
     <h2>manifest</h2>
     <nav class="navigation">
-      <div class="navigation__menu">
+      <div id="navigation-menu" class="navigation__menu">
         <a href="">home</a>
         <a href="">about</a>
         <a href="">works</a>
@@ -25,6 +39,11 @@
         <a href="">contact</a>
       </div>
       <img src="./assets/images/search.svg" alt="Search img">
+      <div id="menu-hamburger" class="navigation__hamburger">
+        <div class="navigation__hamburger-line"></div>
+        <div class="navigation__hamburger-line"></div>
+        <div class="navigation__hamburger-line"></div>
+      </div>
     </nav>
   </header>
 
@@ -33,9 +52,7 @@
       Clean, simple and fast.</h1>
   </section>
 
-  <!-- Main content -->
   <main class="main-wrapper">
-    <!-- Section with blog -->
     <section class="blog-wrapper">
       <h3>Blog</h3>
 
@@ -62,7 +79,6 @@
       </article>
     </section>
 
-    <!-- Section latests posts -->
     <section class="latest-posts">
       <h3 class="latest-posts__title">Latest Posts</h3>
 
@@ -116,47 +132,29 @@
         </div>
       </div>
     </section>
+  </main> -->
 
-    <!-- Section with most popular -->
-    <section class="most-popular">
-      <h3 class="most-popular__title">The Most Popular</h3>
+  <script>
+    const menuHamburger = document.getElementById('menu-hamburger');
+    const sidebar = document.getElementById('sidebar-menu');
+    const sidebarCloseBtn = document.getElementById('sidebar-close-btn');
+    const sidebarLinks = document.querySelectorAll('.site-sidebar > a');
 
-      <div class="most-popular__body">
-        <div class="post post--popular">
-          <div class="post__img post__img--popular post__img--popular-lamp"></div>
+    menuHamburger.addEventListener('click', () => {
+      sidebar.classList.add('site-sidebar--open');
+    });
 
-          <div class="post__content">
-            <div class="post__header">
-              <span>Interface Design</span>
-              <span>8 June, 2020</span>
-            </div>
+    sidebarCloseBtn.addEventListener('click', () => {
+      sidebar.classList.remove('site-sidebar--open');
+    });
 
-            <div class="post__description">
-              <h4>Mentorship Match — How a simple LinkedIn feature can boost diversity</h4>
-              <p>LinkedIn is on a clear mission to make professionals more successful by connecting the global workforce
-                and as we learned — diversity and success go hand in hand</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="post post--popular">
-          <div class="post__img post__img--popular post__img--popular-wall"></div>
-
-          <div class="post__content">
-            <div class="post__header">
-              <span>Interface Design</span>
-              <span>8 June, 2020</span>
-            </div>
-
-            <div class="post__description">
-              <h4>Creativity vs. UX</h4>
-              <p>Is it possible to create a delightful user experience without following best UX practices?</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+    for (const link of sidebarLinks) {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        sidebar.classList.remove('site-sidebar--open');
+      });
+    }
+  </script>
 </body>
 
 </html>
