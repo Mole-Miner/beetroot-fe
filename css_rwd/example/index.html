@@ -5,6 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CSS RWD</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Red+Hat+Display:wght@400;500;600&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="./dist/index.css">
 </head>
 
@@ -28,7 +33,9 @@
       Clean, simple and fast.</h1>
   </section>
 
+  <!-- Main content -->
   <main class="main-wrapper">
+    <!-- Section with blog -->
     <section class="blog-wrapper">
       <h3>Blog</h3>
 
@@ -53,6 +60,101 @@
         </section>
         <section class="blog__img blog__img--house"></section>
       </article>
+    </section>
+
+    <!-- Section latests posts -->
+    <section class="latest-posts">
+      <h3 class="latest-posts__title">Latest Posts</h3>
+
+      <div class="latest-posts__body">
+        <div class="post post--latest">
+          <div class="post__img post__img--post post__img--lamp"></div>
+
+          <div class="post__content">
+            <div class="post__header">
+              <span>Interface Design</span>
+              <span>8 June, 2020</span>
+            </div>
+
+            <div class="post__description">
+              <h4>UX traffic light colours</h4>
+              <p>UI has to make a huge visual difference between warning, an alert and a success.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="post post--latest post--reverse">
+          <div class="post__img post__img--post post__img--arrow"></div>
+
+          <div class="post__content">
+            <div class="post__header">
+              <span>Technology</span>
+              <span>6 May, 2020</span>
+            </div>
+
+            <div class="post__description">
+              <h4>Using UX Design to Build a Sustainable Future</h4>
+              <p>UI has to make a huge visual difference between warning, an alert and a success.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="post post--latest">
+          <div class="post__img post__img--post post__img--roof"></div>
+
+          <div class="post__content">
+            <div class="post__header">
+              <span>Visual Design</span>
+              <span>8 June, 2020</span>
+            </div>
+
+            <div class="post__description">
+              <h4>Creativity vs. UX</h4>
+              <p>Is it possible to create a delightful user experience without following best UX practices?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section with most popular -->
+    <section class="most-popular">
+      <h3 class="most-popular__title">The Most Popular</h3>
+
+      <div class="most-popular__body">
+        <div class="post post--popular">
+          <div class="post__img post__img--popular post__img--popular-lamp"></div>
+
+          <div class="post__content">
+            <div class="post__header">
+              <span>Interface Design</span>
+              <span>8 June, 2020</span>
+            </div>
+
+            <div class="post__description">
+              <h4>Mentorship Match — How a simple LinkedIn feature can boost diversity</h4>
+              <p>LinkedIn is on a clear mission to make professionals more successful by connecting the global workforce
+                and as we learned — diversity and success go hand in hand</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="post post--popular">
+          <div class="post__img post__img--popular post__img--popular-wall"></div>
+
+          <div class="post__content">
+            <div class="post__header">
+              <span>Interface Design</span>
+              <span>8 June, 2020</span>
+            </div>
+
+            <div class="post__description">
+              <h4>Creativity vs. UX</h4>
+              <p>Is it possible to create a delightful user experience without following best UX practices?</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 </body>
