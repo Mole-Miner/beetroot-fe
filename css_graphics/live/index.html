@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Graphics Live</title>
+  <link rel="stylesheet" href="./dist/normalize.css">
+  <link rel="stylesheet" href="./dist/styles.css">
+  <script src="./scripts/navigation.js" defer></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <img class="site-header__logo" src="./assets/images/logo.svg" alt="Logo img">
+
+    <nav id="navigation" class="navigation">
+      <a class="navigation__link" href="">home</a>
+      <a class="navigation__link" href="">about</a>
+      <a class="navigation__link" href="">works</a>
+      <a class="navigation__link" href="">blog</a>
+      <a class="navigation__link" href="">contact</a>
+      <button id="close-navigation" class="navigation__close-btn">Close</button>
+    </nav>
+
+    <img class="site-header__search" src="./assets/images/search.svg" alt="Search img">
+    <img id="open-navigation" class="site-header__hamburger" src="./assets/images/hamburger.svg" alt="Hanburger img">
+  </header>
+
+  <main>
+    <article class="first-screen">
+      <section class="first-screen__content">
+        <h1 class="first-screen__title">Manifest is a newborn theme. Clean, simple and fast.</h1>
+      </section>
+    </article>
+
+    <article class="blog">
+      <h2 class="blog__title">Blog</h2>
+
+      <section class="blog__content">
+        <div class="card">
+          <picture>
+            <source media="(max-width: 1440px)" srcset="./assets/images/blog-arrow-tablet.png">
+            <source media="(max-width: 768px)" srcset="./assets/images/blog-arrow-mobile.png">
+            <img class="card__img" src="./assets/images/blog-arrow-desktop.png" alt="Blog arrow img">
+          </picture>
+
+          <div class="card__info">
+            <p class="card__tag">Technology, Interface Design</p>
+            <h4 class="card__title">Using UX Design to Build a Sustainable Future</h4>
+            <span class="card__date">6 May, 2020</span>
+            <p class="card__description">Transformation has to be driven by everybody, not just by climate groups, and
+              we have a responsibility to
+              use our influence to drive this.</p>
+          </div>
+        </div>
+
+        <div class="card card--row-reverse">
+          <picture>
+            <source media="(max-width: 1440px)" srcset="./assets/images/blog-house-tablet.png">
+            <source media="(max-width: 768px)" srcset="./assets/images/blog-house-mobile.png">
+            <img class="card__img" src="./assets/images/blog-house-desktop.png" alt="Blog house img">
+          </picture>
+
+          <div class="card__info">
+            <p class="card__tag">Technology, Interface Design</p>
+            <h4 class="card__title">Using UX Design to Build a Sustainable Future</h4>
+            <span class="card__date">6 May, 2020</span>
+            <p class="card__description">Transformation has to be driven by everybody, not just by climate groups, and
+              we have a responsibility to
+              use our influence to drive this.</p>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+@use './variables' as var;
+
+@mixin mobile-screen {
+  @media screen and (max-width: var.$tablet-screen) {
+    @content;
+  }
+}
+
+@mixin tablet-screen {
+  @media screen and (max-width: var.$desktop-screen) {
+    @content;
+  }
+}
+
+@mixin section-padding {
+  padding-inline: var.$desktop-inline-padding;
+
+  @include tablet-screen {
+    padding-inline: var.$tablet-inline-padding;
+  }
+
+  @include mobile-screen {
+    padding-inline: var.$mobile-inline-padding;
+  }
+}
+
+@mixin title {
+  font-family: 'Red Hat Display';
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 64px;
+  letter-spacing: 2.4px;
+}
+
+@mixin text($color: var.$black) {
+  font-family: 'Lato';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 166%;
+  letter-spacing: 0.8px;
+  color: $color;
+}

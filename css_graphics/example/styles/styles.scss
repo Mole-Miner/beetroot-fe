@@ -1,0 +1,213 @@
+@use './variables' as var;
+@use './mixins' as mix;
+
+@font-face {
+  font-family: Lato, sans-serif;
+  src: url(../assets/fonts/lato/Lato-Regular.ttf);
+}
+
+@font-face {
+  font-family: Red Hat Display, sans-serif;
+  src: url(../assets/fonts/red_hat_display/static/RedHatDisplay-Regular.ttf);
+}
+
+.site-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100px;
+  @include mix.section-padding;
+  padding-block: 20px;
+
+  &__logo {
+    margin-right: auto;
+  }
+
+  &__search {
+    margin-left: 80px;
+  }
+
+  &__hamburger {
+    display: none;
+    margin-left: 40px;
+
+    @include mix.tablet-screen {
+      display: block;
+    }
+  }
+}
+
+.navigation {
+  display: flex;
+  gap: 42px;
+
+  &__link {
+    @include mix.text;
+    text-transform: uppercase;
+  }
+
+  @include mix.tablet-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    contain: paint;
+    transform: translateX(-100%);
+    transition: .4s;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+
+    &--open {
+      transform: translateX(0);
+    }
+  }
+
+  &__close-btn {
+    display: none;
+
+    @include mix.tablet-screen {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      display: block;
+    }
+  }
+}
+
+.first-screen {
+  height: 600px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(../assets/images/first-screen-bg-desktop.png);
+
+  @include mix.tablet-screen {
+    height: 320px;
+    background-image: url(../assets/images/first-screen-bg-tablet.png);
+  }
+
+  @include mix.mobile-screen {
+    height: 500px;
+    background-image: url(../assets/images/first-screen-bg-mobile.png);
+  }
+
+  &__content {
+    @include mix.section-padding;
+    padding-inline-end: 535px;
+    padding-block: 100px 380px;
+    height: 100%;
+
+    @include mix.tablet-screen {
+      padding-block: 30px 190px;
+    }
+
+    @include mix.mobile-screen {
+      padding-block: 70px 230px;
+    }
+  }
+
+  &__title {
+    @include mix.title;
+
+    @include mix.tablet-screen {
+      font-size: 36px;
+      line-height: 50px;
+      letter-spacing: 1.8px;
+    }
+
+    @include mix.mobile-screen {
+      font-size: 30px;
+      line-height: 50px;
+      letter-spacing: 1.5px;
+    }
+  }
+}
+
+.card {
+  display: flex;
+  gap: 30px;
+
+  &--row-reverse {
+    flex-direction: row-reverse;
+  }
+
+  @include mix.mobile-screen {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__tag,
+  &__title,
+  &__date,
+  &__description {
+    line-height: 166%;
+  }
+
+  &__tag,
+  &__date {
+    letter-spacing: 1.6px;
+  }
+
+  &__tag,
+  &__date,
+  &__description {
+    @include mix.text(var.$gray);
+  }
+
+  &__tag {
+    margin-bottom: 30px;
+  }
+
+  &__title {
+    margin-bottom: 15px;
+    @include mix.title;
+    font-size: 23px;
+    font-weight: 500;
+    letter-spacing: 2.3px;
+  }
+
+  &__date {
+    margin-bottom: 50px;
+
+    @include mix.tablet-screen {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.blog {
+  @include mix.section-padding;
+  padding-block: 90px;
+
+  @include mix.tablet-screen {
+    padding-block: 70px;
+  }
+
+  @include mix.mobile-screen {
+    padding-block: 70px;
+  }
+
+  &__title {
+    @include mix.title;
+    margin-bottom: 50px;
+
+    @include mix.mobile-screen {
+      text-align: center;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+}
