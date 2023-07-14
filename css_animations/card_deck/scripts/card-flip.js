@@ -1,42 +1,78 @@
-function getRandomCard() {
-    const lastCard = 35;
-    return Math.round(Math.random() * lastCard);
-}
+class AnimatedCardSide {
+    #node;
+    #animation;
 
-function flipCards(sideSelector, animationName) {
-    if (!sideSelector || !sideSelector.frontSide || !sideSelector.backSide) {
-        throw new TypeError(`Invalid side selector. Selector must contain frontSide and backSide properties. Example: {frontSide: '.card__front', backSide: '.card__back'}`);
+    constructor(node, animation) {
+        this.#node = node;
+        this.#animation = animation;
     }
-    if (!animationName || !animationName.frontAnimation || !animationName.backAnimation) {
-        throw new TypeError(`Invalid animation name. Animation name must contain frontAnimation and backAnimation properties. Example: {frontAnimation: 'rotate-front', backAnimation: 'rotate-back'}`);
+
+    #setAnimation() {
+        this.#node.style.animationName = this.#animation.animationName;
+        this.#node.style.animationDuration = `${this.#animation.animationDuration / 1000}s`;
     }
-    const cardFrontList = document.querySelectorAll(sideSelector.frontSide);
-    const cardBackList = document.querySelectorAll(sideSelector.backSide);
-    let previousCard = getRandomCard();
-    setInterval(() => {
-        let currentCard = getRandomCard();
-        while (previousCard === currentCard) {
-            currentCard = getRandomCard();
-        }
-        previousCard = currentCard;
-        const cardFront = cardFrontList.item(previousCard);
-        const cardBack = cardBackList.item(previousCard);
-        cardFront.style.animationName = animationName.frontAnimation;
-        cardBack.style.animationName = animationName.backAnimation;
+
+    #removeAnimation() {
         const timeout = setTimeout(() => {
-            cardFront.style.animationName = null;
-            cardBack.style.animationName = null;
+            this.#node.style.animationName = null;
+            this.#node.style.animationDuration = null;
             clearTimeout(timeout);
-        }, 4000);
-    }, 2000);
+        }, this.#animation.animationDuration);
+    }
+
+    flip() {
+        this.#setAnimation();
+        this.#removeAnimation();
+    }
 }
 
-flipCards({
+class AnimatedCardsService {
+    #previousCard;
+    #cardFrontList;
+    #cardBackList;
+
+    constructor(sideSelector, animationMap) {
+        this.#cardFrontList = [...document.querySelectorAll(sideSelector.frontSide)].map(frontSide => new AnimatedCardSide(frontSide, animationMap.front));
+        this.#cardBackList = [...document.querySelectorAll(sideSelector.backSide)].map(backSide => new AnimatedCardSide(backSide, animationMap.back));
+    }
+
+    #randomCard() {
+        const lastCard = 35;
+        return Math.round(Math.random() * lastCard);
+    }
+
+    #flipCardSides() {
+        const cardSides = [this.#cardFrontList.at(this.#previousCard), this.#cardBackList.at(this.#previousCard)];
+        cardSides.forEach(cardSide => cardSide.flip());
+    }
+
+    flipCards() {
+        this.#previousCard = this.#randomCard();
+        setInterval(() => {
+            let currentCard = this.#randomCard();
+            while (this.#previousCard === currentCard) {
+                currentCard = this.#randomCard();
+            }
+            this.#previousCard = currentCard;
+            this.#flipCardSides()
+        }, 2000);
+    }
+}
+
+const cardsService = new AnimatedCardsService({
         frontSide: '.js-card-flip__front',
         backSide: '.js-card-flip__back'
     },
     {
-        frontAnimation: 'rotate-front',
-        backAnimation: 'rotate-back'
+        front: {
+            animationName: 'rotate-front',
+            animationDuration: 4000
+        },
+        back: {
+            animationName: 'rotate-back',
+            animationDuration: 4000
+        }
     }
 );
+
+cardsService.flipCards();

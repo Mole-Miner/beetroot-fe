@@ -20,7 +20,6 @@
     height: 100%;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-    animation-duration: 4s;
   }
 
   &__front {
@@ -36,6 +35,10 @@
 
 .scss-card-flip {
   @extend .card;
+
+  &__front, &__back {
+    animation-duration: 4s;
+  }
 
   &__front {
     @extend .card__front;
