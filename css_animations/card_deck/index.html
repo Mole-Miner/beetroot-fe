@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dist/styles.css">
+    <script src="scripts/card-deck.js" defer></script>
+</head>
+<body>
+<article>
+    <h1>Кожні 2 секунди перевертаємо випадкову карту за допомогою scss</h1>
+    <p>Це рішення відпрацює лише один раз на проміжку 72сек, а після припинить свою роботу. Послідовність перевертання карток, після оновлення документа (оновлення сторінки), не зміниться тому, що
+        постійно використовується одного разу згенерований css.</p>
+    <section id="scss-card-deck" class="card-deck"></section>
+</article>
+
+<article>
+    <h1>Кожні 2 секунджи перевертаємо випадкову карту за допомогою js</h1>
+    <p>Це рішення працює нескінченно (при оновленні документа теж).</p>
+    <section id="js-card-deck" class="card-deck"></section>
+</article>
+</body>
+</html>
