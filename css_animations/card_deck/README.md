@@ -1,8 +1,8 @@
 #How to use
 1. Open ./scripts/card-flip.js and copy all code to your file
-2. Invoke flipCard with frontAnimationName: <keyframe name>, backAnimationName: <keyframe name>, cardSelector: <selector to find all cards>
+2. Invoke flipCard with frontAnimationName: 'keyframe name', backAnimationName: 'keyframe name', cardSelector: 'selector to find all cards'
 
-#Warn
+#Warn \n\n
 Your card must contain two elements with &__front and &__back classes respectively
 <div class="your-card-class">
     <div class="your-card-class__front"></div>
