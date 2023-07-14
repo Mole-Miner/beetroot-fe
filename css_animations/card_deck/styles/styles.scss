@@ -1,0 +1,115 @@
+@use "sass:math" as math;
+@use "sass:list" as list;
+
+.card-deck {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 80px);
+  place-content: center;
+  gap: 1rem;
+}
+
+.card {
+  position: relative;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  height: 120px;
+
+  &__front, &__back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    animation-duration: 4s;
+  }
+
+  &__front {
+    height: 100%;
+    background-color: lightcoral;
+  }
+
+  &__back {
+    background-color: lightblue;
+    transform: rotateY(180deg);
+  }
+}
+
+.scss-card-flip {
+  @extend .card;
+
+  &__front {
+    @extend .card__front;
+    animation-name: rotate-front;
+  }
+
+  &__back {
+    @extend .card__back;
+    animation-name: rotate-back;
+  }
+}
+
+.js-card-flip {
+  @extend .card;
+
+  &__front {
+    @extend .card__front;
+  }
+
+  &__back {
+    @extend .card__back;
+  }
+}
+
+@keyframes rotate-front {
+  0% {
+    transform: rotateY(0);
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(0);
+  }
+}
+
+@keyframes rotate-back {
+  0% {
+    transform: rotateY(180deg);
+  }
+  50% {
+    transform: rotateY(360deg);
+
+  }
+  100% {
+    transform: rotateY(180deg);
+  }
+}
+
+@function randomDelay() {
+  $max-delay: 72;
+  $delay: math.random($max-delay);
+  @if $delay % 2 == 1 {
+    @return $delay + 1;
+  }
+  @return $delay;
+}
+
+$animation-delays: ();
+$first-card: 1;
+$last-card: 36;
+
+@for $i from $first-card through $last-card {
+  $animation-delay: randomDelay();
+
+  @while list.index($animation-delays, $animation-delay) {
+    $animation-delay: randomDelay();
+  }
+
+  $animation-delays: list.append($animation-delays, $animation-delay);
+
+  .scss-card-flip:nth-child(#{$i}) {
+    .scss-card-flip__front, .scss-card-flip__back {
+      animation-delay: #{$animation-delay}s;
+    }
+  }
+}

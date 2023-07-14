@@ -1,0 +1,116 @@
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  perspective: 800px;
+}
+
+.card {
+  width: 200px;
+  height: 300px;
+}
+
+.subject {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background-color: lightblue;
+  animation: move 9s ease-in-out 1s infinite alternate-reverse;
+}
+
+@keyframes move {
+  0% {
+    top: 0;
+    left: 0;
+    background-color: lightcoral;
+  }
+  20% {
+    top: 100px;
+    left: 200px;
+    background-color: lightgreen;
+  }
+  40% {
+    top: 150px;
+    left: 400px;
+    background-color: lightpink;
+  }
+  60% {
+    top: 200px;
+    left: 600px;
+    background-color: lightsalmon;
+  }
+  80% {
+    top: 250px;
+    left: 800px;
+    background-color: lightseagreen;
+  }
+  100% {
+    top: 300px;
+    left: 1000px;
+    background-color: lightcoral;
+  }
+}
+.tp {
+  transition-property: position, background-color;
+}
+
+.tdr {
+  transition-duration: 2s, 3s;
+}
+
+.tdl {
+  transition-delay: 1s;
+}
+
+.ttf {
+  transition-timing-function: ease;
+}
+.ttf--ease-in {
+  transition-timing-function: ease-in;
+}
+.ttf--ease-out {
+  transition-timing-function: ease-out;
+}
+.ttf--ease-in-out {
+  transition-timing-function: linear;
+}
+.ttf--steps {
+  transition-timing-function: steps(6, jump-both);
+}
+
+.am {
+  animation: move 5s ease-in-out 2s 5 alternate-reverse;
+}
+
+.amn {
+  animation-name: move;
+}
+
+.amtf {
+  animation-timing-function: ease-in-out;
+}
+
+.amdl {
+  animation-delay: 1s;
+}
+
+.amdur {
+  animation-duration: 5s;
+}
+
+.amdir {
+  animation-direction: alternate;
+}
+
+.ami {
+  animation-iteration-count: 3;
+}
+
+.amf {
+  animation-fill-mode: forwards;
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,204 @@
+.card-deck {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 80px);
+  place-content: center;
+  gap: 1rem;
+}
+
+.card, .js-card-flip, .scss-card-flip {
+  position: relative;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  height: 120px;
+}
+.card__front, .js-card-flip__front, .scss-card-flip__front, .card__back, .js-card-flip__back, .scss-card-flip__back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  animation-duration: 4s;
+}
+.card__front, .js-card-flip__front, .scss-card-flip__front {
+  height: 100%;
+  background-color: lightcoral;
+}
+.card__back, .js-card-flip__back, .scss-card-flip__back {
+  background-color: lightblue;
+  transform: rotateY(180deg);
+}
+
+.scss-card-flip__front {
+  animation-name: rotate-front;
+}
+.scss-card-flip__back {
+  animation-name: rotate-back;
+}
+
+@keyframes rotate-front {
+  0% {
+    transform: rotateY(0);
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(0);
+  }
+}
+@keyframes rotate-back {
+  0% {
+    transform: rotateY(180deg);
+  }
+  50% {
+    transform: rotateY(360deg);
+  }
+  100% {
+    transform: rotateY(180deg);
+  }
+}
+.scss-card-flip:nth-child(1) .scss-card-flip__front, .scss-card-flip:nth-child(1) .scss-card-flip__back {
+  animation-delay: 2s;
+}
+
+.scss-card-flip:nth-child(2) .scss-card-flip__front, .scss-card-flip:nth-child(2) .scss-card-flip__back {
+  animation-delay: 28s;
+}
+
+.scss-card-flip:nth-child(3) .scss-card-flip__front, .scss-card-flip:nth-child(3) .scss-card-flip__back {
+  animation-delay: 20s;
+}
+
+.scss-card-flip:nth-child(4) .scss-card-flip__front, .scss-card-flip:nth-child(4) .scss-card-flip__back {
+  animation-delay: 34s;
+}
+
+.scss-card-flip:nth-child(5) .scss-card-flip__front, .scss-card-flip:nth-child(5) .scss-card-flip__back {
+  animation-delay: 14s;
+}
+
+.scss-card-flip:nth-child(6) .scss-card-flip__front, .scss-card-flip:nth-child(6) .scss-card-flip__back {
+  animation-delay: 12s;
+}
+
+.scss-card-flip:nth-child(7) .scss-card-flip__front, .scss-card-flip:nth-child(7) .scss-card-flip__back {
+  animation-delay: 24s;
+}
+
+.scss-card-flip:nth-child(8) .scss-card-flip__front, .scss-card-flip:nth-child(8) .scss-card-flip__back {
+  animation-delay: 22s;
+}
+
+.scss-card-flip:nth-child(9) .scss-card-flip__front, .scss-card-flip:nth-child(9) .scss-card-flip__back {
+  animation-delay: 26s;
+}
+
+.scss-card-flip:nth-child(10) .scss-card-flip__front, .scss-card-flip:nth-child(10) .scss-card-flip__back {
+  animation-delay: 50s;
+}
+
+.scss-card-flip:nth-child(11) .scss-card-flip__front, .scss-card-flip:nth-child(11) .scss-card-flip__back {
+  animation-delay: 56s;
+}
+
+.scss-card-flip:nth-child(12) .scss-card-flip__front, .scss-card-flip:nth-child(12) .scss-card-flip__back {
+  animation-delay: 66s;
+}
+
+.scss-card-flip:nth-child(13) .scss-card-flip__front, .scss-card-flip:nth-child(13) .scss-card-flip__back {
+  animation-delay: 60s;
+}
+
+.scss-card-flip:nth-child(14) .scss-card-flip__front, .scss-card-flip:nth-child(14) .scss-card-flip__back {
+  animation-delay: 44s;
+}
+
+.scss-card-flip:nth-child(15) .scss-card-flip__front, .scss-card-flip:nth-child(15) .scss-card-flip__back {
+  animation-delay: 64s;
+}
+
+.scss-card-flip:nth-child(16) .scss-card-flip__front, .scss-card-flip:nth-child(16) .scss-card-flip__back {
+  animation-delay: 32s;
+}
+
+.scss-card-flip:nth-child(17) .scss-card-flip__front, .scss-card-flip:nth-child(17) .scss-card-flip__back {
+  animation-delay: 18s;
+}
+
+.scss-card-flip:nth-child(18) .scss-card-flip__front, .scss-card-flip:nth-child(18) .scss-card-flip__back {
+  animation-delay: 42s;
+}
+
+.scss-card-flip:nth-child(19) .scss-card-flip__front, .scss-card-flip:nth-child(19) .scss-card-flip__back {
+  animation-delay: 54s;
+}
+
+.scss-card-flip:nth-child(20) .scss-card-flip__front, .scss-card-flip:nth-child(20) .scss-card-flip__back {
+  animation-delay: 58s;
+}
+
+.scss-card-flip:nth-child(21) .scss-card-flip__front, .scss-card-flip:nth-child(21) .scss-card-flip__back {
+  animation-delay: 62s;
+}
+
+.scss-card-flip:nth-child(22) .scss-card-flip__front, .scss-card-flip:nth-child(22) .scss-card-flip__back {
+  animation-delay: 38s;
+}
+
+.scss-card-flip:nth-child(23) .scss-card-flip__front, .scss-card-flip:nth-child(23) .scss-card-flip__back {
+  animation-delay: 52s;
+}
+
+.scss-card-flip:nth-child(24) .scss-card-flip__front, .scss-card-flip:nth-child(24) .scss-card-flip__back {
+  animation-delay: 68s;
+}
+
+.scss-card-flip:nth-child(25) .scss-card-flip__front, .scss-card-flip:nth-child(25) .scss-card-flip__back {
+  animation-delay: 70s;
+}
+
+.scss-card-flip:nth-child(26) .scss-card-flip__front, .scss-card-flip:nth-child(26) .scss-card-flip__back {
+  animation-delay: 8s;
+}
+
+.scss-card-flip:nth-child(27) .scss-card-flip__front, .scss-card-flip:nth-child(27) .scss-card-flip__back {
+  animation-delay: 10s;
+}
+
+.scss-card-flip:nth-child(28) .scss-card-flip__front, .scss-card-flip:nth-child(28) .scss-card-flip__back {
+  animation-delay: 72s;
+}
+
+.scss-card-flip:nth-child(29) .scss-card-flip__front, .scss-card-flip:nth-child(29) .scss-card-flip__back {
+  animation-delay: 36s;
+}
+
+.scss-card-flip:nth-child(30) .scss-card-flip__front, .scss-card-flip:nth-child(30) .scss-card-flip__back {
+  animation-delay: 46s;
+}
+
+.scss-card-flip:nth-child(31) .scss-card-flip__front, .scss-card-flip:nth-child(31) .scss-card-flip__back {
+  animation-delay: 4s;
+}
+
+.scss-card-flip:nth-child(32) .scss-card-flip__front, .scss-card-flip:nth-child(32) .scss-card-flip__back {
+  animation-delay: 40s;
+}
+
+.scss-card-flip:nth-child(33) .scss-card-flip__front, .scss-card-flip:nth-child(33) .scss-card-flip__back {
+  animation-delay: 48s;
+}
+
+.scss-card-flip:nth-child(34) .scss-card-flip__front, .scss-card-flip:nth-child(34) .scss-card-flip__back {
+  animation-delay: 30s;
+}
+
+.scss-card-flip:nth-child(35) .scss-card-flip__front, .scss-card-flip:nth-child(35) .scss-card-flip__back {
+  animation-delay: 6s;
+}
+
+.scss-card-flip:nth-child(36) .scss-card-flip__front, .scss-card-flip:nth-child(36) .scss-card-flip__back {
+  animation-delay: 16s;
+}
+
+/*# sourceMappingURL=styles.css.map */
