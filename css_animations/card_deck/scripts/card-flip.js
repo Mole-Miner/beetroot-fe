@@ -8,7 +8,7 @@ function flipCards(sideSelector, animationName) {
         throw new TypeError(`Invalid side selector. Selector must contain frontSide and backSide properties. Example: {frontSide: '.card__front', backSide: '.card__back'}`);
     }
     if (!animationName || !animationName.frontAnimation || !animationName.backAnimation) {
-        throw new TypeError(`Invalid side selector. Animation name must contain frontAnimation and backAnimation properties. Example: {frontAnimation: 'rotate-front', backAnimation: 'rotate-back'}`);
+        throw new TypeError(`Invalid animation name. Animation name must contain frontAnimation and backAnimation properties. Example: {frontAnimation: 'rotate-front', backAnimation: 'rotate-back'}`);
     }
     const cardFrontList = document.querySelectorAll(sideSelector.frontSide);
     const cardBackList = document.querySelectorAll(sideSelector.backSide);
