@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <script src="./js/file-uplaoder.js" defer></script>
+</head>
+
+<body>
+  <form class="form">
+    <div class="form__row">
+      <h2 class="form__title">Profile</h2>
+    </div>
+
+    <div class="form__row form__row--avatar">
+      <img id="profile-avatar" class="form__avatar" alt="Profile avatar"></img>
+      <div class="form__field">
+        <!-- <label for="file-upload">
+          <span aria-hidden="true">Test</span>
+          <input type="file" id="file-upload" class="form__control form__control--file-upload">
+        </label> -->
+        <div class="form__choose-file-wrapper">
+          <div id="choose-file" class="form__choose-file">
+            <span id="file-name">Select file</span>
+            <img class="form__camera" src="./assets/images/photo_camera.svg" alt="Photo camera">
+          </div>
+          <button id="remove-file" type="button" class="form__remove-file">
+            <img src="./assets/images/trash.svg" alt="Trash photo">
+          </button>
+        </div>
+        <input type="file" id="file-upload" class="form__control form__control--file-upload">
+        <p class="form__hint">Up to 1 MB (300x300 px)</p>
+      </div>
+    </div>
+
+    <div class="form__row">
+      <div class="form__field">
+        <label for="name" class="form__label">Name</label>
+        <input type="text" id="name" class="form__control">
+      </div>
+
+      <div class="form__field">
+        <label for="email" class="form__label">E-mail</label>
+        <input type="email" id="email" class="form__control">
+      </div>
+    </div>
+
+    <div class="form__row">
+      <div class="form__field">
+        <label for="country" class="form__label">Country</label>
+        <!-- <input type="text" id="country" class="form__control"> -->
+        <select id="country" class="form__control form__control--drop-down">
+          <option selected disabled>Country</option>
+        </select>
+      </div>
+
+      <div class="form__field">
+        <label for="city" class="form__label">City</label>
+        <input type="tel" id="city" class="form__control">
+      </div>
+    </div>
+
+    <div class="form__row">
+      <div class="form__field">
+        <label for="name" class="form__label">Zip Code</label>
+        <input type="text" id="name" class="form__control">
+      </div>
+
+      <div class="form__field">
+        <label for="email" class="form__label">Phone Number</label>
+        <input type="email" id="email" class="form__control">
+      </div>
+    </div>
+
+    <div class="form__row">
+      <button type="submit" class="form__submit">Update</button>
+    </div>
+  </form>
+</body>
+
+</html>

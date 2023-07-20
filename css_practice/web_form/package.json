@@ -1,0 +1,14 @@
+{
+  "name": "web_form",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "sass:watch": "sass -w ./scss:./css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.63.6"
+  }
+}

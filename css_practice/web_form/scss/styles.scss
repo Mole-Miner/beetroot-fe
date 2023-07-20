@@ -1,0 +1,161 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  width: 590px;
+  padding: 35px 35px 104px 35px;
+
+  &__title {
+    color: #1C1C1C;
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  &__avatar {
+    margin-right: 20px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: lightblue;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+
+    // &--avatar {
+    //   column-gap: 20px;
+    // }
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    row-gap: 7px;
+    width: 50%;
+  }
+
+  &__label {
+    color: #545454;
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  &__control {
+    outline: none;
+    border: none;
+    border: 1px solid #E4E4E4;
+    border-radius: 6px;
+    height: 38px;
+    padding-inline: 6px;
+
+    &:focus {
+      border-color: #007BFF;
+    }
+
+    &--drop-down {
+      color: #969696;
+    }
+
+    &--file-upload {
+      display: none;
+    }
+  }
+
+  &__hint {
+    color: #969696;
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  &__submit {
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    width: 150px;
+    height: 38px;
+    background-color: #007BFF;
+    color: #FFF;
+  }
+
+  &__choose-file-wrapper {
+    display: flex;
+    column-gap: 10px;
+  }
+
+  $choose-file-height: 30px;
+
+  &__choose-file {
+    @extend .form__control;
+    // position: relative;
+    display: flex;
+    column-gap: 20px;
+    // justify-content: space-between;
+    align-items: center;
+    // width: 138px;
+    height: $choose-file-height;
+    color: #969696;
+  }
+
+  &__camera {
+    // $camera-height: 16px;
+    // position: absolute;
+    // top: calc(($choose-file-height - $camera-height) / 2);
+    // right: 5px;
+  }
+
+  &__remove-file {
+    outline: none;
+    border: none;
+    border: 1px solid #E4E4E4;
+    border-radius: 6px;
+    display: flex;
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFF;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .form {
+    padding-inline: 5px;
+
+    &__row {
+      flex-direction: column;
+
+      &--avatar {
+        flex-direction: row;
+      }
+    }
+
+    &__field {
+      width: 100%;
+    }
+
+    &__avatar {
+      margin-right: 0;
+    }
+  }
+}
