@@ -3,13 +3,13 @@ const b = 12;
 const c = 8;
 
 // &&
-console.log(a && b);
+console.log(true && false);
 
 // ||
-console.log(a || b);
+console.log(false || true);
 
 // !
-console.log(!(a && b));
+console.log(!(false && false));
 
 const greaterThanC = (a - b) > c;
 const lessThanB = (a + c) > b;
