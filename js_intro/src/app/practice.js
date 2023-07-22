@@ -33,9 +33,11 @@ const b = +prompt('Inout B');
 const x = -b / a;
 console.log(`A: ${a}, B: ${b}\nFormula a * x + b = 0\tx: ${x}`);*/
 
-/*const paycheck = 250;
+/*
+const sales = +prompt('Enter sales);
+const paycheck = 250;
 const bonusRate = 0.1;
-const paycheckBonus = paycheck * bonusRate;
+const paycheckBonus = sales * bonusRate;
 const months = 12;
 const salary = (paycheck + paycheckBonus) * months;
 console.log(`Salary: ${salary}`);*/

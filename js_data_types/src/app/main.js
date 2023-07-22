@@ -3,3 +3,4 @@
 // import './comparison';
 // import './logical';
 // import './assignment';
+import './practice';
