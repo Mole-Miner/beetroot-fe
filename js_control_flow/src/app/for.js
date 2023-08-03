@@ -1,3 +1,24 @@
+// debugger;
+// for (let i = 0; i < 5; i++) {
+//     console.log(i);
+// }
+//
+// for (let i = 0; i < 5; i++)
+//     console.log(i);
+//
+// for (let i = 0; i < 5; i++) console.log(i);
+
+// debugger;
+myLoop: for (let i = 0; i < 7; i++) {
+    if (i === 2) {
+        continue myLoop;
+    }
+    if (i === 4) {
+        break myLoop;
+    }
+    console.log(i);
+}
+
 /*for (let i = 0; i < 5; i++) {
     console.log(i);
 }
