@@ -6,3 +6,4 @@
 // import './advanced';
 // import './practice.entry';
 // import './practice.advanced';
+import './scaffold';
