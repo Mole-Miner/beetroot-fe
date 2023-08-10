@@ -3,6 +3,6 @@
 // import './sparse';
 // import './entry';
 // import './callback';
-// import './medium';
+// import './advanced';
 // import './practice.entry';
 // import './practice.advanced';
