@@ -37,8 +37,3 @@ function guess() {
 }
 
 // guess();
-
-document.addEventListener('keydown', (e) => {
-    e.preventDefault();
-    console.log(e.code);
-});
