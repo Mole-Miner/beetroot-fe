@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('node:path');
 const HtmlPlugin = require('html-webpack-plugin');
+const MinCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     mode: 'development',
@@ -33,6 +34,9 @@ module.exports = {
     },
     resolve: {
         extensions: ['.js'],
+        alias: {
+            '@styles': path.resolve(__dirname, 'src', 'styles')
+        }
     },
     optimization: {
         moduleIds: 'deterministic',
@@ -60,7 +64,11 @@ module.exports = {
                         ]
                     }
                 }
-            }
+            },
+            {
+                test: /\.css$/,
+                use: [MinCssExtractPlugin.loader, 'css-loader']
+            },
         ]
     },
     plugins: [
@@ -69,14 +77,17 @@ module.exports = {
             jQuery: "jquery/dist/jquery.min.js",
             "window.jQuery": "jquery/dist/jquery.min.js"
         }),
+        new MinCssExtractPlugin({
+            filename: '[name].[contenthash].css',
+            chunkFilename: '[name].[contenthash].css',
+            ignoreOrder: false
+        }),
         ...['index', 'modal', 'accordion', 'slider'].map((pageName) => {
             const pageTitle = pageName.replace(pageName[0], pageName[0].toUpperCase());
             return new HtmlPlugin({
                 title: `JS JQuery ${pageTitle}`,
                 template: path.resolve(__dirname, 'src', 'templates', 'index.html'),
                 filename: `${pageName}.html`,
-                inject: 'body',
-                scriptLoading: 'module',
                 chunks: [pageName]
             })
         }),
