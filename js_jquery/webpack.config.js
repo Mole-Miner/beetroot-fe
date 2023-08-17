@@ -9,10 +9,8 @@ module.exports = {
     context: path.resolve(__dirname, 'src'),
     devtool: 'eval-cheap-module-source-map',
     entry: {
-        index: './scripts/index.js',
         modal: './scripts/modal.js',
         accordion: './scripts/accordion.js',
-        slider: './scripts/slider.js',
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -80,9 +78,9 @@ module.exports = {
         new MinCssExtractPlugin({
             filename: '[name].[contenthash].css',
             chunkFilename: '[name].[contenthash].css',
-            ignoreOrder: false
+            ignoreOrder: false,
         }),
-        ...['index', 'modal', 'accordion', 'slider'].map((pageName) => {
+        ...['modal', 'accordion'].map((pageName) => {
             const pageTitle = pageName.replace(pageName[0], pageName[0].toUpperCase());
             return new HtmlPlugin({
                 title: `JS JQuery ${pageTitle}`,
