@@ -16,6 +16,10 @@
     height: 50%;
 }
 
-.modal-overlay.active, .modal.active {
+.modal-overlay.active {
     visibility: visible;
+}
+
+.modal__close {
+    color: green;
 }
