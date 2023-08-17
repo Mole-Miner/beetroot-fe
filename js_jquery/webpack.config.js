@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const path = require('node:path');
 const HtmlPlugin = require('html-webpack-plugin');
 
@@ -21,7 +22,7 @@ module.exports = {
     devServer: {
         host: '0.0.0.0',
         port: 9000,
-        open: true,
+        open: false,
         hot: true,
         liveReload: true,
         historyApiFallback: true,
@@ -31,7 +32,20 @@ module.exports = {
         }
     },
     resolve: {
-        extensions: ['.js']
+        extensions: ['.js'],
+    },
+    optimization: {
+        moduleIds: 'deterministic',
+        runtimeChunk: 'single',
+        splitChunks: {
+            cacheGroups: {
+                vendor: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: 'vendors',
+                    chunks: 'all'
+                }
+            }
+        }
     },
     module: {
         rules: [
@@ -50,6 +64,11 @@ module.exports = {
         ]
     },
     plugins: [
+        new webpack.ProvidePlugin({
+            $: "jquery/dist/jquery.min.js",
+            jQuery: "jquery/dist/jquery.min.js",
+            "window.jQuery": "jquery/dist/jquery.min.js"
+        }),
         ...['index', 'modal', 'accordion', 'slider'].map((pageName) => {
             const pageTitle = pageName.replace(pageName[0], pageName[0].toUpperCase());
             return new HtmlPlugin({
@@ -60,6 +79,6 @@ module.exports = {
                 scriptLoading: 'module',
                 chunks: [pageName]
             })
-        })
+        }),
     ]
 };
