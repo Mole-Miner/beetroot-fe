@@ -5,7 +5,7 @@ const MinCssExtractPlugin = require('mini-css-extract-plugin');
 
 const src = path.resolve(__dirname, 'src');
 const dist = path.resolve(__dirname, 'dist');
-const pageNames = ['promise', 'async-await', 'xhr', 'jquery-ajax', 'fetch'];
+const pageNames = ['promise', 'fetch', 'copywriter'];
 
 module.exports = {
     mode: 'development',
