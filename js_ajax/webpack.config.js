@@ -2,10 +2,11 @@ const webpack = require('webpack');
 const path = require('node:path');
 const HtmlPlugin = require('html-webpack-plugin');
 const MinCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 const src = path.resolve(__dirname, 'src');
 const dist = path.resolve(__dirname, 'dist');
-const pageNames = ['promise', 'fetch', 'copywriter'];
+const pageNames = ['promise', 'fetch', 'copywriter', 'employees'];
 
 module.exports = {
     mode: 'development',
@@ -75,6 +76,14 @@ module.exports = {
         ],
     },
     plugins: [
+        new CopyPlugin({
+            patterns: [
+                {
+                    from: path.resolve(src, 'assets', 'json'),
+                    to:  path.resolve(dist, 'assets', 'json')
+                }
+            ],
+        }),
         new webpack.ProvidePlugin({
             $: "jquery/dist/jquery.min.js",
             jQuery: "jquery/dist/jquery.min.js",
