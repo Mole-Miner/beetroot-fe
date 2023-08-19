@@ -84,7 +84,6 @@ async function CopywriterDetailsComponent(copywriterId) {
         class: 'copywriters__details',
     });
 
-
     $('<h1/>', {
         text: 'Details',
     })

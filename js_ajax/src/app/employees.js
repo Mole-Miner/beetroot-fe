@@ -4,7 +4,7 @@ import '@scss/employees.scss';
 import { OfficeComponent } from './employees/components';
 
 async function bootstrap() {
-    const officeComponent = OfficeComponent();
+    const officeComponent = await OfficeComponent();
     officeComponent.appendTo(document.body);
 }
 
