@@ -1,4 +1,6 @@
-function Employee(employee) {
+import { getEmployees } from "@js/employees/api";
+
+function EmployeeComponent(employee) {
     const container = $('<section/>', {
         class: 'employee'
     });
@@ -12,10 +14,11 @@ function Employee(employee) {
     })
         .prop('checked', employee.inOffice)
         .appendTo(container);
+
     return container;
 }
 
-function Department({class: cssClass, title, employees}) {
+function DepartmentComponent({class: cssClass, title, employees}) {
     const container = $('<section/>', {
         class: cssClass
     });
@@ -26,15 +29,18 @@ function Department({class: cssClass, title, employees}) {
     })
         .appendTo(container);
 
-    employees.forEach((employee) => {
-        const employeeComponent = Employee(employee);
-        employeeComponent.appendTo(container)
-    });
+    employees
+        .map(EmployeeComponent)
+        .forEach((component) => {
+            component.appendTo(container)
+        });
 
     return container;
 }
 
-export function Office(employees) {
+export async function OfficeComponent() {
+    const employees = await getEmployees();
+
     const container = $('<section/>', {
         class: 'office'
     });
@@ -45,9 +51,9 @@ export function Office(employees) {
     })
         .appendTo(container);
 
-    function createDepartment({title, cssClass, inOffice}) {
+    function createDepartmentComponent({title, cssClass, inOffice}) {
         const filteredEmployees = employees.filter((employee) => employee.inOffice === inOffice);
-        const departmentComponent = Department({
+        const departmentComponent = DepartmentComponent({
             title,
             class: cssClass,
             employees: filteredEmployees
@@ -55,12 +61,12 @@ export function Office(employees) {
         departmentComponent.appendTo(container);
     }
 
-    createDepartment({
+    createDepartmentComponent({
         title: 'In office',
         cssClass: 'office__in',
         inOffice: true
     });
-    createDepartment({
+    createDepartmentComponent({
         title: 'Out of office',
         cssClass: 'office__out',
         inOffice: false

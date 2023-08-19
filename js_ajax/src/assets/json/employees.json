@@ -1,44 +1,42 @@
-{
-  "data": [
-    {
-      "name": "Employee 1",
-      "inOffice": true
-    },
-    {
-      "name": "Employee 2",
-      "inOffice": true
-    },
-    {
-      "name": "Employee 3",
-      "inOffice": true
-    },
-    {
-      "name": "Employee 4",
-      "inOffice": true
-    },
-    {
-      "name": "Employee 5",
-      "inOffice": true
-    },
-    {
-      "name": "Employee 6",
-      "inOffice": true
-    },
-    {
-      "name": "Employee 7",
-      "inOffice": false
-    },
-    {
-      "name": "Employee 8",
-      "inOffice": true
-    },
-    {
-      "name": "Employee 9",
-      "inOffice": false
-    },
-    {
-      "name": "Employee 10",
-      "inOffice": true
-    }
-  ]
-}
+[
+  {
+    "name": "Employee 1",
+    "inOffice": true
+  },
+  {
+    "name": "Employee 2",
+    "inOffice": true
+  },
+  {
+    "name": "Employee 3",
+    "inOffice": true
+  },
+  {
+    "name": "Employee 4",
+    "inOffice": true
+  },
+  {
+    "name": "Employee 5",
+    "inOffice": true
+  },
+  {
+    "name": "Employee 6",
+    "inOffice": true
+  },
+  {
+    "name": "Employee 7",
+    "inOffice": false
+  },
+  {
+    "name": "Employee 8",
+    "inOffice": true
+  },
+  {
+    "name": "Employee 9",
+    "inOffice": false
+  },
+  {
+    "name": "Employee 10",
+    "inOffice": true
+  }
+]

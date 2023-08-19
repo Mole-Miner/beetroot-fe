@@ -1,13 +1,14 @@
 import '@scss/styles.scss';
 import '@scss/employees.scss';
 
-import { getEmployees } from './employees/api';
-import { Office } from './employees/components';
+import { OfficeComponent } from './employees/components';
 
 async function bootstrap() {
-    const employees = await getEmployees();
-    const officeComponent = Office(employees);
+    const officeComponent = OfficeComponent();
     officeComponent.appendTo(document.body);
 }
 
-bootstrap();
+bootstrap()
+    .catch((err) => {
+        console.error('Failed to bootstrap Office', err);
+    });

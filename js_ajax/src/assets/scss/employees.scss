@@ -1,3 +1,5 @@
+@use '@scss/mixins' as mix;
+
 .office {
   display: grid;
   grid-template: repeat(2, auto) / repeat(2, minmax(300px, 1fr));
@@ -25,10 +27,6 @@
 }
 
 .employee {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid whitesmoke;
-  box-shadow: 0 1px 0 whitesmoke;
-  padding-block: 1rem;
+  @include mix.list-item;
 }
 
