@@ -1,7 +1,7 @@
 import '@scss/styles.scss';
 import '@scss/employees.scss';
 
-import { OfficeComponent } from './employees/components';
+import { OfficeComponent } from '@js/employees/components/Office';
 
 async function bootstrap() {
     const officeComponent = await OfficeComponent();

@@ -1,7 +1,7 @@
 import '@scss/styles.scss';
 import '@scss/copywriters.scss';
 
-import { CopywritersComponent } from './copywriters/components';
+import { CopywritersComponent } from '@js/copywriters/components/Copywriters';
 
 async function bootstrap() {
     const copywritersComponent = await CopywritersComponent();
