@@ -19,11 +19,10 @@ export async function OfficeComponent() {
         const departmentComponent = DepartmentComponent({
             title,
             class: cssClass,
-            employees: filteredEmployees
+            employees: filteredEmployees,
         });
         departmentComponent.appendTo(container);
     }
-
     createDepartmentComponent({
         title: 'In office',
         cssClass: 'office__in',

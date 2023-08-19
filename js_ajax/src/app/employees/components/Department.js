@@ -14,8 +14,8 @@ export function DepartmentComponent({class: cssClass, title, employees}) {
     employees
         .map(EmployeeComponent)
         .forEach((component) => {
-            component.appendTo(container)
-        });
+            component.appendTo(container);
+        })
 
     return container;
 }

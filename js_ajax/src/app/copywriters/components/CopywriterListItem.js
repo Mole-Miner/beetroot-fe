@@ -12,7 +12,6 @@ export function CopywriterListItemComponent({id, username}) {
     })
         .appendTo(container);
 
-
     $('<span/>', {
         text: username,
     })

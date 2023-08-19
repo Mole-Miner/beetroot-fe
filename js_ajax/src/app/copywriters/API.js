@@ -29,4 +29,3 @@ export async function getCopywriterPosts(copywriterId) {
         return [];
     }
 }
-

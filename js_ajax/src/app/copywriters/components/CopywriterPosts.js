@@ -17,7 +17,7 @@ export async function CopywriterPostsComponent(copywriterId) {
         .map(CopywriterPostComponent)
         .forEach((component) => {
             component.appendTo(container);
-        });
+        })
 
     return container;
 }

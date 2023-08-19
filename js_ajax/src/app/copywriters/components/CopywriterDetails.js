@@ -12,7 +12,7 @@ export async function CopywriterDetailsComponent(copywriterId) {
     })
         .appendTo(container);
 
-    ['username', 'name', 'email', 'phone', 'website']
+    ['name', 'username', 'email', 'phone', 'website']
         .map((field) => {
             const detailsField = field.replace(field[0], field[0].toUpperCase());
             if (field === 'username') {
@@ -22,10 +22,10 @@ export async function CopywriterDetailsComponent(copywriterId) {
             }
             return $('<p/>', {
                 text: `${detailsField}: ${copywriter[field]}`,
-            })
+            });
         })
-        .forEach((fieldElement) => {
-            fieldElement.appendTo(container);
+        .forEach((element) => {
+            element.appendTo(container);
         });
 
     $('<button/>', {

@@ -8,7 +8,6 @@ export function CopywriterPostComponent({id, title}) {
     })
         .appendTo(container);
 
-
     $('<span/>', {
         text: title,
     })
