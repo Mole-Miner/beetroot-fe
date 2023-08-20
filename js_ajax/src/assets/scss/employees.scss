@@ -1,0 +1,32 @@
+@use '@scss/mixins' as mix;
+
+.office {
+  display: grid;
+  grid-template: repeat(2, auto) / repeat(2, minmax(300px, 1fr));
+  grid-template-areas:
+    "title title"
+    "in-office out-office";
+  padding: 1rem;
+
+  &__header {
+    grid-area: title;
+  }
+
+  &__title {
+    font-size: 3rem;
+  }
+
+  &__subtitle {
+    font-size: 2rem;
+  }
+
+  &__in,
+  &__out {
+    padding: 1rem;
+  }
+}
+
+.employee {
+  @include mix.list-item;
+}
+

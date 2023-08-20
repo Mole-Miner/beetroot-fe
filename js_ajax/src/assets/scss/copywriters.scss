@@ -1,0 +1,36 @@
+@use '@scss/mixins' as mix;
+
+.copywriters {
+  display: grid;
+  grid-template: repeat(3, auto) / repeat(2, minmax(300px, 1fr));
+  grid-template-areas:
+    "header header"
+    "list details"
+    "list posts";
+  gap: 1rem;
+  padding: 1rem;
+
+  &__header {
+    grid-area: header;
+  }
+
+  &__list {
+    grid-area: list;
+  }
+
+  &__list-item {
+    @include mix.list-item;
+  }
+
+  &__details {
+    grid-area: details;
+  }
+
+  &__posts {
+    grid-area: posts;
+  }
+
+  &__title {
+    font-size: 3rem;
+  }
+}
