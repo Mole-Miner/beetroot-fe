@@ -1,4 +1,4 @@
-const todoService = {
+const todosService = {
     idKey: 'id',
     todosKey: 'todos',
     setId(id) {
@@ -13,16 +13,13 @@ const todoService = {
     getTodos() {
         return JSON.parse(localStorage.getItem(this.todosKey));
     },
-    init() {
-        this.setId(0);
-        this.setTodos([]);
-    },
     createTodo(data) {
         let id = this.getId();
+        const todo = {id: id++, task: data.task, completed: false};
         const todos = this.getTodos();
-        todos.push({id: ++id, task: data.task, completed: false});
-        this.setId(id);
+        todos.push(todo);
         this.setTodos(todos);
+        this.setId(id);
     },
     updateTodo(id, data) {
         const todos = this.getTodos();
@@ -39,12 +36,12 @@ const todoService = {
         todos = todos.filter((todo) => todo.id !== id);
         this.setTodos(todos);
     }
-}
+};
 
-todoService.init();
-todoService.createTodo({task: 'Buy milk'});
-todoService.createTodo({task: 'Buy cheese'});
-todoService.updateTodo(1, {completed: true});
-todoService.updateTodo(2, {task: 'Buy carrot'});
-todoService.deleteTodo(1);
-console.log(todoService.getTodos());
+/*todosService.setTodos([]);
+todosService.setId(1);*/
+/*todosService.createTodo({task: 'Buy milk'});
+todosService.createTodo({task: 'Buy potato'});*/
+// todosService.deleteTodo(7);
+todosService.updateTodo(2, {task: 'Buy carrot'});
+console.log(todosService.getTodos());

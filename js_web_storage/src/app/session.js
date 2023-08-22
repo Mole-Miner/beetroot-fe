@@ -1,3 +1,6 @@
+/*sessionStorage.setItem('mykey', 'mydata');
+console.log(sessionStorage.getItem('mykey'));*/
+
 // sessionStorage.setItem('mykey', 'mydata');
 
 /*const user = {
@@ -5,6 +8,9 @@
     lastname: 'user'
 }
 
+sessionStorage.setItem('user', JSON.stringify(user));
+console.log(JSON.parse(sessionStorage.getItem('user')));*/
+/*
 sessionStorage.setItem('user', JSON.stringify(user));
 console.log(JSON.parse(sessionStorage.getItem('user')));*/
 
