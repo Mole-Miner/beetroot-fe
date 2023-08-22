@@ -6,7 +6,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 
 const src = path.resolve(__dirname, 'src');
 const dist = path.resolve(__dirname, 'dist');
-const pageNames = ['promise', 'fetch', 'copywriters', 'employees'];
+const pageNames = ['promise', 'fetch', 'copywriters', 'employees', 'homework'];
 
 module.exports = {
     mode: 'development',
