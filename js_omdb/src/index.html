@@ -7,16 +7,25 @@
 <body>
     <header>
         <form class="search">
-            <input type="text" placeholder="Enter movie">
-            <select>
-                <option value="movie">Movie</option>
-                <option value="series">Series</option>
-                <option value="episode">Episode</option>
-            </select>
+            <label>
+                Enter movie:
+                <input type="text" name="search" placeholder="Blade" required>
+            </label>
+            <label>
+                Select type:
+                <select name="type" required>
+                    <option selected disabled value="">Type</option>
+                    <option value="movie">Movie</option>
+                    <option value="series">Series</option>
+                    <option value="episode">Episode</option>
+                </select>
+            </label>
             <button>Search</button>
         </form>
     </header>
 
-    <main></main>
+    <main>
+        <section class="movies"></section>
+    </main>
 </body>
 </html>

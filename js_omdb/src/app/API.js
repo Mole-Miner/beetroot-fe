@@ -10,8 +10,8 @@ export async function getMovies({search, type}) {
         const response = await fetch(url);
         const {Search, totalResults} = await response.json();
         return {
-            movies: Search,
-            total: Number(totalResults),
+            movies: Search ?? [],
+            total: Number(totalResults) ?? 0,
         }
     } catch (err) {
         console.log(err);
