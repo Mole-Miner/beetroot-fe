@@ -1,4 +1,5 @@
 import { getMovies } from "@js/API";
+import { dispatchDetailsEvent, dispatchMoviesEvent, OMDB_EVENT } from "@js/dispatch";
 
 const moviesSection = document.querySelector('section.movies');
 let searchOptions = {};
@@ -21,7 +22,7 @@ function renderMovieSection(movie) {
     const movieLearnMore = document.createElement('button');
     movieLearnMore.textContent = 'Details';
     movieLearnMore.addEventListener('click', () => {
-        document.dispatchEvent(new CustomEvent('omdb-details', {detail: movie.imdbID}));
+        dispatchDetailsEvent(movie.imdbID);
     });
     movieSection.append(moviePoster, movieTitle, movieYear, movieLearnMore);
     moviesSection.appendChild(movieSection);
@@ -38,15 +39,14 @@ function renderMoviesSection(movies) {
     }
 }
 
-document.addEventListener('omdb-search', async (e) => {
+document.addEventListener(OMDB_EVENT.SEARCH, async (e) => {
     searchOptions = e.detail;
     const moviesData = await getMovies(searchOptions);
-    const moviesEvent = new CustomEvent('omdb-movies', {detail: moviesData});
-    document.dispatchEvent(moviesEvent);
+    dispatchMoviesEvent(moviesData);
     renderMoviesSection(moviesData.movies);
 });
 
-document.addEventListener('omdb-pagination', async (e) => {
+document.addEventListener(OMDB_EVENT.PAGINATION, async (e) => {
     const page = e.detail;
     searchOptions = {
         ...searchOptions,

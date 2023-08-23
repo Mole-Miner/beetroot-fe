@@ -1,4 +1,5 @@
 import { getMovieById } from "@js/API";
+import { OMDB_EVENT } from "@js/dispatch";
 
 const detailsSection = document.querySelector('section.details');
 
@@ -19,13 +20,13 @@ function renderDetailsSection({Actors, Director, Genre}) {
     detailsSection.append(detailsActors, detailsDirector, detailsGenre);
 }
 
-document.addEventListener('omdb-details', async (e) => {
+document.addEventListener(OMDB_EVENT.DETAILS, async (e) => {
     const searchOptions = e.detail;
     const movieData = await getMovieById(searchOptions);
     renderDetailsSection(movieData);
 });
 
-document.addEventListener('omdb-search', () => {
+document.addEventListener(OMDB_EVENT.SEARCH, () => {
    clearDetailsSection();
 });
 

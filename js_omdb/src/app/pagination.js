@@ -1,3 +1,5 @@
+import { dispatchPaginationEvent, OMDB_EVENT } from "@js/dispatch";
+
 const paginationSection = document.querySelector('section.pagination');
 const previousBtn = document.querySelector('button.pagination__previous');
 const nextBtn = document.querySelector('button.pagination__next');
@@ -38,7 +40,7 @@ function renderCurrentPage() {
     currentPageSpan.textContent = `${pagination.currentPage} | ${pagination.lastPage}`;
 }
 
-document.addEventListener('omdb-movies', (e) => {
+document.addEventListener(OMDB_EVENT.MOVIES, (e) => {
     const total = e.detail.total;
     const page = e.detail.page;
     if (total === 0 && page === 0) {
@@ -54,8 +56,7 @@ previousBtn.addEventListener('click', () => {
     if (!previousPage) {
         return;
     }
-    const paginationEvent = new CustomEvent('omdb-pagination', {detail: previousPage});
-    document.dispatchEvent(paginationEvent);
+    dispatchPaginationEvent(previousPage);
     renderCurrentPage();
 });
 
@@ -64,7 +65,6 @@ nextBtn.addEventListener('click', () => {
     if (!nextPage) {
         return;
     }
-    const paginationEvent = new CustomEvent('omdb-pagination', {detail: nextPage});
-    document.dispatchEvent(paginationEvent);
+    dispatchPaginationEvent(nextPage);
     renderCurrentPage();
 });

@@ -1,3 +1,5 @@
+import { dispatchSearchEvent } from "@js/dispatch";
+
 const searchForm = document.querySelector('form.search');
 
 searchForm.addEventListener('submit', (e) => {
@@ -10,7 +12,6 @@ searchForm.addEventListener('submit', (e) => {
         ...formData,
         page: 1,
     };
-    const searchEvent = new CustomEvent('omdb-search', {detail: searchOptions});
-    document.dispatchEvent(searchEvent);
+    dispatchSearchEvent(searchOptions);
     searchForm.reset();
 });
