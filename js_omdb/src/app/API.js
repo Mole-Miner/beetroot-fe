@@ -3,7 +3,7 @@ async function createRequest(params) {
         ...params,
         apikey: '6fcb550a',
     }).toString();
-    const url= new URL(`http://www.omdbapi.com/?${searchParams}`);
+    const url = new URL(`http://www.omdbapi.com/?${searchParams}`);
     const response = await fetch(url);
     return await response.json();
 }

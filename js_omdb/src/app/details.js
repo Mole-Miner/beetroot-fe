@@ -27,9 +27,9 @@ document.addEventListener(OMDB_EVENT.DETAILS, async (e) => {
 });
 
 document.addEventListener(OMDB_EVENT.SEARCH, () => {
-   clearDetailsSection();
+    clearDetailsSection();
 });
 
 document.addEventListener('omdb-pagination', () => {
-   clearDetailsSection();
+    clearDetailsSection();
 });

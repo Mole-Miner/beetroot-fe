@@ -21,10 +21,10 @@ const pagination = {
         return --this.currentPage;
     },
     nextPage() {
-      if (this.currentPage === this.lastPage) {
-          return;
-      }
-      return ++this.currentPage;
+        if (this.currentPage === this.lastPage) {
+            return;
+        }
+        return ++this.currentPage;
     }
 }
 
