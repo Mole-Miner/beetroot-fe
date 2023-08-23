@@ -24,3 +24,11 @@ document.addEventListener('omdb-details', async (e) => {
     const movieData = await getMovieById(searchOptions);
     renderDetailsSection(movieData);
 });
+
+document.addEventListener('omdb-search', () => {
+   clearDetailsSection();
+});
+
+document.addEventListener('omdb-pagination', () => {
+   clearDetailsSection();
+});

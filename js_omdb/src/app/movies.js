@@ -1,6 +1,7 @@
 import { getMovies } from "@js/API";
 
 const moviesSection = document.querySelector('section.movies');
+let searchOptions = {};
 
 function clearMoviesSection() {
     if (moviesSection.children.length > 0) {
@@ -19,7 +20,7 @@ function renderMovieSection(movie) {
     movieYear.textContent = movie.Year;
     const movieLearnMore = document.createElement('button');
     movieLearnMore.textContent = 'Details';
-    movieLearnMore.addEventListener('click', async () => {
+    movieLearnMore.addEventListener('click', () => {
         document.dispatchEvent(new CustomEvent('omdb-details', {detail: movie.imdbID}));
     });
     movieSection.append(moviePoster, movieTitle, movieYear, movieLearnMore);
@@ -38,8 +39,19 @@ function renderMoviesSection(movies) {
 }
 
 document.addEventListener('omdb-search', async (e) => {
-    const searchOptions = e.detail;
+    searchOptions = e.detail;
     const moviesData = await getMovies(searchOptions);
-    document.dispatchEvent(new CustomEvent('omdb-movies', {detail: moviesData}));
+    const moviesEvent = new CustomEvent('omdb-movies', {detail: moviesData});
+    document.dispatchEvent(moviesEvent);
+    renderMoviesSection(moviesData.movies);
+});
+
+document.addEventListener('omdb-pagination', async (e) => {
+    const page = e.detail;
+    searchOptions = {
+        ...searchOptions,
+        page,
+    };
+    const moviesData = await getMovies(searchOptions);
     renderMoviesSection(moviesData.movies);
 });

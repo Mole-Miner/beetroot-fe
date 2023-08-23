@@ -17,12 +17,14 @@ export async function getMovies({search, type, page}) {
         });
         return {
             movies: Search ?? [],
+            page: Search.length ?? 0,
             total: Number(totalResults) ?? 0,
         }
     } catch (err) {
         console.log(err);
         return {
             movies: [],
+            page: 0,
             total: 0,
         };
     }
