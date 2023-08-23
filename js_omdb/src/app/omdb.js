@@ -1,7 +1,26 @@
-import { moviesService } from '@js/API';
+import { getMovieById, getMovies } from '@js/API';
+
+const detailsComponent = {
+    section: document.querySelector('section.details'),
+    clear() {
+        if (this.section.children.length > 0) {
+            Array.from(this.section.children).forEach((child) => child.remove());
+        }
+    },
+    render({Actors, Director, Genre}) {
+        this.clear();
+        const detailsActors = document.createElement('p');
+        detailsActors.textContent = `Actors: ${Actors}`;
+        const detailsDirector = document.createElement('p');
+        detailsDirector.textContent = `Director: ${Director}`;
+        const detailsGenre = document.createElement('p');
+        detailsGenre.textContent = `Genre: ${Genre}`;
+        this.section.append(detailsActors, detailsDirector, detailsGenre);
+    },
+};
 
 const movieComponent = {
-    async render({Title, Year, Poster}) {
+    render({Title, Year, Poster, imdbID}) {
         const movieSection = document.createElement('section');
         movieSection.className = 'movie'
         const moviePoster = document.createElement('img');
@@ -10,25 +29,37 @@ const movieComponent = {
         movieTitle.textContent = Title;
         const movieYear = document.createElement('span');
         movieYear.textContent = Year;
-        movieSection.append(moviePoster, movieTitle, movieYear);
+        const movieLearnMore = document.createElement('button');
+        movieLearnMore.textContent = 'Details';
+        movieLearnMore.addEventListener('click', async () => {
+            const movieData = await getMovieById(imdbID);
+            detailsComponent.render(movieData);
+        });
+        movieSection.append(moviePoster, movieTitle, movieYear, movieLearnMore);
         return movieSection;
     }
 };
 
 const moviesComponent = {
     section: document.querySelector('section.movies'),
-    async render(movies) {
+    clear() {
         if (this.section.children.length > 0) {
-            Array.from(this.section.children).forEach((movieSection) => movieSection.remove());
+            Array.from(this.section.children).forEach((child) => child.remove());
         }
+    },
+    render(movies) {
+        this.clear();
         if (movies.length === 0) {
             this.section.textContent = 'Movie not found';
+            detailsComponent.clear();
+            paginationComponent.hide();
             return;
         }
         for (const movie of movies) {
-            const component = await movieComponent.render(movie);
+            const component = movieComponent.render(movie);
             this.section.appendChild(component);
         }
+        paginationComponent.render();
     }
 };
 
@@ -49,12 +80,9 @@ const searchComponent = {
                 ...formData,
                 page: 1,
             })
-            const moviesData = await moviesService.getMovies(this.searchOptions);
-            paginationComponent.init({total: moviesData.total, page: moviesData.movies.length});
-            await Promise.all([
-                moviesComponent.render(moviesData.movies),
-                paginationComponent.render(),
-            ]);
+            const moviesData = await getMovies(this.searchOptions);
+            paginationComponent.setPages({total: moviesData.total, page: moviesData.movies.length});
+            moviesComponent.render(moviesData.movies);
             this.form.reset();
         });
     }
@@ -68,6 +96,12 @@ const paginationComponent = {
     firstPage: 0,
     lastPage: 0,
     currentPage: 0,
+    show() {
+        this.section.style.display = 'flex';
+    },
+    hide() {
+        this.section.style.display = 'none';
+    },
     async onPrevious() {
         if (this.currentPage === this.firstPage) {
             return;
@@ -75,11 +109,10 @@ const paginationComponent = {
         searchComponent.patchSearchOptions({
             page: --this.currentPage
         });
-        const moviesData = await moviesService.getMovies(searchComponent.searchOptions);
-        await Promise.all([
-            moviesComponent.render(moviesData.movies),
-            this.render(),
-        ]);
+        const moviesData = await getMovies(searchComponent.searchOptions);
+        moviesComponent.render(moviesData.movies);
+        detailsComponent.clear();
+        this.render();
     },
     async onNext() {
         if (this.currentPage === this.lastPage) {
@@ -88,16 +121,17 @@ const paginationComponent = {
         searchComponent.patchSearchOptions({
             page: ++this.currentPage
         });
-        const moviesData = await moviesService.getMovies(searchComponent.searchOptions);
-        await Promise.all([
-            moviesComponent.render(moviesData.movies),
-            this.render(),
-        ]);
+        const moviesData = await getMovies(searchComponent.searchOptions);
+        moviesComponent.render(moviesData.movies);
+        detailsComponent.clear();
+        this.render();
     },
-    init({total, page}) {
+    setPages({total, page}) {
         this.firstPage = 1;
         this.currentPage = 1;
         this.lastPage = Math.ceil(total / page);
+    },
+    onPagination() {
         this.previousBtn.addEventListener('click', async () => {
             await this.onPrevious();
         });
@@ -105,10 +139,11 @@ const paginationComponent = {
             await this.onNext();
         });
     },
-    async render() {
+    render() {
         this.currentSpan.textContent = this.currentPage.toString();
-        this.section.style.display = 'flex';
+        this.show();
     }
 };
 
 searchComponent.onSearch();
+paginationComponent.onPagination();
