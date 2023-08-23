@@ -1,0 +1,24 @@
+.search {
+  display: grid;
+  justify-content: center;
+  row-gap: 0.5rem;
+  padding: 1rem;
+}
+
+.movies {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 0.5rem;
+  overflow-y: auto;
+  height: 500px;
+}
+
+.pagination {
+  display: none;
+  column-gap: 0.5rem;
+  padding: 1rem;
+}
+
+.movie {
+  background-color: whitesmoke;
+}
