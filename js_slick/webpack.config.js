@@ -98,7 +98,7 @@ module.exports = {
             ignoreOrder: false,
         }),
         new HtmlPlugin({
-            title: 'JS Exam',
+            title: 'JS Slick',
             template: path.resolve(__dirname, 'src', 'index.html'),
             filename: 'index.html',
         }),
