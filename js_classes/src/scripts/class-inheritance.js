@@ -1,45 +1,17 @@
-/*class Employee {
-    firstname;
-    lastname;
-    _age;
-
-    set age(value) {
-        if (value > 50) {
-            console.error('This employee too old');
-            return;
-        }
-        this._age = value;
-    }
-
-    get age() {
-        if (!this._age) {
-            return 0;
-        }
-        return this._age;
-    }
-
-    constructor(firstname, lastname) {
-        this.firstname = firstname;
-        this.lastname = lastname;
-    }
-
-    work() {
-        console.log(`${this.firstname} is working...`);
-    }
+class Shape {
+    perimeter() {}
 }
 
-const john = new Employee('john', 'doe');
-// const employee = new Employee;
+class Rectangle extends Shape {
+    width;
+    height;
+}
 
-const liza = new Employee('liza', 'doe');
-/!*console.log(john.firstname, liza.firstname);*!/
+class Circle extends Shape {
+    r;
+}
 
-/!*john.work();
-liza.work();*!/
-/!*john.age = 30;
-console.log(john.age);*!/*/
-
-class Human {
+/*class Human {
     firstname;
     lastname;
 
@@ -78,13 +50,13 @@ class Alex extends Human {
     work() {
         console.log(this.firstname + ' is working');
     }
-}
+}*/
 
-const liza = new Liza('Liza', 'Liza lastname', 'super studio');
+/*const liza = new Liza('Liza', 'Liza lastname', 'super studio');
 liza.talk();
 liza.sing();
 liza.eat();
 const alex = new Alex('Alex', 'Alex lastname');
 alex.talk();
 alex.work();
-alex.eat();
+alex.eat();*/
