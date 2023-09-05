@@ -54,7 +54,7 @@ function Movies() {
             </section>
             <section className={"movies__content"}>
                 {
-                    movies.map((movie) => <Movie movie={movie}/>)
+                    movies.map((movie) => <Movie key={movie.imdbID} movie={movie}/>)
                 }
             </section>
         </section>
