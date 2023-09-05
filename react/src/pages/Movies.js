@@ -34,6 +34,7 @@ function Movies() {
     return (
         <section className={"movies"}>
             <section className={"movies__search"}>
+                <h1>Movies</h1>
                 <form onSubmit={onFormSubmit}>
                     <label>
                         Enter movie:
