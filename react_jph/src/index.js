@@ -6,10 +6,35 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import App from './App';
 import './assets/scss/styles.scss';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Users from "@js/features/Users";
+import Posts from "@js/features/Posts";
+import Comments from "@js/features/Comments";
+
+const router = createBrowserRouter([
+    {
+        path: '',
+        element: <App />,
+        children: [
+            {
+                path: '',
+                element: <Users />
+            },
+            {
+                path: 'posts',
+                element: <Posts />
+            },
+            {
+                path: 'comments',
+                element: <Comments />
+            }
+        ]
+    }
+]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <App />
+        <RouterProvider router={router} />
     </React.StrictMode>
 );
