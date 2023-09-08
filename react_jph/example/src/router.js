@@ -1,11 +1,8 @@
 import React from 'react';
 import { createBrowserRouter, Navigate } from 'react-router-dom';
 import App from './App';
-import Users from '@features/Users';
-import Posts from '@features/Posts';
-import Comments from '@features/Comments';
-import NotFoundPage from "./pages/NotFoundPage";
-import ErrorPage from "./pages/ErrorPage";
+import NotFoundPage from './pages/NotFoundPage';
+import ErrorPage from './pages/ErrorPage';
 
 const router = createBrowserRouter([
   {
@@ -15,20 +12,21 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
+        index: true,
         element: <Navigate to='/users' />
       },
       {
         path: '/users',
-        element: <Users />
+        lazy: () => import('@features/Users')
       },
       {
         path: '/posts',
-        element: <Posts />
+        lazy: () => import('@features/Posts')
       },
       {
         path: '/comments',
-        element: <Comments />
-      },
+        lazy: () => import('@features/Comments')
+      }
     ]
   },
   {
