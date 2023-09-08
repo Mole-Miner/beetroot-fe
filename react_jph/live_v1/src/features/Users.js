@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { DataGrid } from '@mui/x-data-grid';
-import { getUsers } from '@js/api/users.api';
+import { getUsers } from '../api/users.api';
 
 const gridColumns = [
     { field: 'id', headerName: "ID", width: 50 },
