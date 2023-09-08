@@ -13,7 +13,7 @@ const router = createBrowserRouter([
       {
         path: '/',
         index: true,
-        element: <Navigate to='/users' />
+        element: <Navigate to="/users" />
       },
       {
         path: '/users',

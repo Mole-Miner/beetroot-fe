@@ -12,22 +12,22 @@ export default function DataTable({ columnsCells, rowsCells, fetch }) {
   return (
     <>
       {data?.length >= 0 ? (
-          <TableContainer>
+        <TableContainer>
           <Table>
             <TableHead>
               <TableRow>
                 {columnsCells?.map((columnCell) => (
-                    <TableCell key={columnCell}>{columnCell}</TableCell>
+                  <TableCell key={columnCell}>{columnCell}</TableCell>
                 ))}
               </TableRow>
             </TableHead>
             <TableBody>
               {data.map((item) => (
-                  <TableRow key={item.id}>
-                    {rowsCells?.map((rowCell) => (
-                        <TableCell key={rowCell}>{item[rowCell]}</TableCell>
-                    ))}
-                  </TableRow>
+                <TableRow key={item.id}>
+                  {rowsCells?.map((rowCell) => (
+                    <TableCell key={rowCell}>{item[rowCell]}</TableCell>
+                  ))}
+                </TableRow>
               ))}
             </TableBody>
           </Table>

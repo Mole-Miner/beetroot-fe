@@ -9,5 +9,5 @@ function Users() {
   return <DataTable rowsCells={rowsCells} columnsCells={columnsCells} fetch={getUsers} />;
 }
 
-export {Users as Component}
+export { Users as Component };
 export default Users;
