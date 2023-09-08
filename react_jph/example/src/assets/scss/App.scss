@@ -1,10 +1,30 @@
 .app {
   display: grid;
-  grid-template-columns: 100px 1fr;
+  grid-template-columns: auto 1fr;
   height: 100%;
 }
 
 .navigation {
   display: flex;
   flex-direction: column;
+  padding: 1rem;
+
+  &__link {
+    transition: all 0.25s;
+    padding: 0.5rem;
+
+    &:hover {
+      background-color: #385170;
+      color: white;
+    }
+
+    &--active {
+      background-color: #385170;
+      color: white;
+    }
+  }
+}
+
+.outlet {
+  padding: 1rem;
 }
