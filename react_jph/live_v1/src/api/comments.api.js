@@ -11,3 +11,13 @@ export async function getComments() {
     return [];
   }
 }
+
+export async function getCommentById(commentId) {
+  try {
+    const response = await axios.get(`${url}/${commentId}`);
+    return response.data;
+  } catch (e) {
+    console.log(e);
+    return null;
+  }
+}
