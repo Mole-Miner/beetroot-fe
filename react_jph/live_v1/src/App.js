@@ -4,7 +4,7 @@ import './assets/scss/App.scss';
 
 export default function App() {
   const navLinks = [
-    { to: '/', label: 'Users' },
+    { to: '/users', label: 'Users' },
     { to: '/posts', label: 'Posts' },
     { to: '/comments', label: 'Comments' },
     { to: '/albums', label: 'Albums' }
