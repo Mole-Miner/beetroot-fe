@@ -1,5 +1,9 @@
 import React from 'react';
 
-export default function ErrorPage() {
+function ErrorPage() {
   return <p>Oops error has occurred</p>;
 }
+
+export {ErrorPage as Component};
+
+export default ErrorPage;

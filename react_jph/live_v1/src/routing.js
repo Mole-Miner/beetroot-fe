@@ -1,11 +1,7 @@
 import React from 'react';
 import { createBrowserRouter, Navigate } from 'react-router-dom';
 import App from './App';
-import Users from './features/Users';
-import Posts from './features/Posts';
-import Comments from './features/Comments';
 import ErrorPage from '@js/pages/ErrorPage';
-import NotFoundPage from '@js/pages/NotFoundPage';
 
 const router = createBrowserRouter([
   {
@@ -19,21 +15,21 @@ const router = createBrowserRouter([
       },
       {
         path: '/users',
-        element: <Users />
+        lazy: () => import('@js/features/Users')
       },
       {
         path: '/posts',
-        element: <Posts />
+        lazy: () => import('@js/features/Posts')
       },
       {
         path: '/comments',
-        element: <Comments />
+        lazy: () => import('@js/features/Comments')
       }
     ]
   },
   {
     path: '*',
-    element: <NotFoundPage />
+    lazy: () => import('@js/pages/NotFoundPage')
   }
 ]);
 

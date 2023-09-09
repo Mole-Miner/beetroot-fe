@@ -8,7 +8,7 @@ const gridColumns = [
   { field: 'userId', headerName: 'UserID', width: 100 }
 ];
 
-export default function Posts() {
+function Posts() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
@@ -30,3 +30,7 @@ export default function Posts() {
     </div>
   );
 }
+
+export {Posts as Component}
+
+export default Posts;

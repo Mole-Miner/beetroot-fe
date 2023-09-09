@@ -1,5 +1,9 @@
 import React from 'react';
 
-export default function Comments() {
+function Comments() {
   return <p>Comments</p>;
 }
+
+export {Comments as Component}
+
+export default Comments;
