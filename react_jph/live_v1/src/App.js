@@ -26,7 +26,7 @@ export default function App() {
           </NavLink>
         ))}
       </nav>
-      <main>
+      <main className="outlet">
         <Outlet />
       </main>
     </div>

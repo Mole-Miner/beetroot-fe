@@ -15,21 +15,23 @@ function Users() {
   }, []);
 
   return (
-    <div style={{ height: '100%', width: '100%' }}>
-      <DataGrid
-        rows={users}
-        columns={gridColumns}
-        initialState={{
-          pagination: {
-            paginationModel: { page: 0, pageSize: 5 }
-          }
-        }}
-        pageSizeOptions={[5, 10]}
-      />
-    </div>
+    <>
+      <div style={{ height: '100%', width: '100%' }}>
+        <DataGrid
+          rows={users}
+          columns={gridColumns}
+          initialState={{
+            pagination: {
+              paginationModel: { page: 0, pageSize: 5 }
+            }
+          }}
+          pageSizeOptions={[5, 10]}
+        />
+      </div>
+    </>
   );
 }
 
-export {Users as Component}
+export { Users as Component };
 
 export default Users;

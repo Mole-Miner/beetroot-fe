@@ -14,16 +14,20 @@ const router = createBrowserRouter([
         element: <Navigate to="/users" />
       },
       {
-        path: '/users',
-        lazy: () => import('@js/features/Users')
-      },
-      {
         path: '/posts',
         lazy: () => import('@js/features/Posts')
       },
       {
+        path: '/users',
+        lazy: () => import('@js/features/Users')
+      },
+      {
+        path: '/comments/:commentId',
+        lazy: () => import('@js/features/comments/Comment')
+      },
+      {
         path: '/comments',
-        lazy: () => import('@js/features/Comments')
+        lazy: () => import('@js/features/comments/Comments')
       }
     ]
   },

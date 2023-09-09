@@ -31,6 +31,6 @@ function Posts() {
   );
 }
 
-export {Posts as Component}
+export { Posts as Component };
 
 export default Posts;
