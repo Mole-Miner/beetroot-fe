@@ -1,0 +1,30 @@
+.app {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  height: 100%;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  padding: 1rem;
+
+  &__link {
+    padding: 0.5rem;
+
+    &:hover {
+      color: white;
+      background-color: black;
+    }
+
+    &--active {
+      color: white;
+      background-color: black;
+    }
+  }
+}
+
+.outlet {
+  padding: 1rem;
+}
