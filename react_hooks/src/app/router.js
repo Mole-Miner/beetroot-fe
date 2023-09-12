@@ -1,8 +1,6 @@
 import React from 'react';
 import { createBrowserRouter, Navigate } from 'react-router-dom';
 import App from '../App';
-import State from '@features/State';
-import Reducer from '@features/Reducer';
 
 const router = createBrowserRouter([
   {
@@ -16,11 +14,27 @@ const router = createBrowserRouter([
       },
       {
         path: 'state',
-        element: <State />
+        lazy: () => import('@features/State')
       },
       {
         path: 'reducer',
-        element: <Reducer />
+        lazy: () => import('@features/Reducer')
+      },
+      {
+        path: 'context',
+        lazy: () => import('@features/Context')
+      },
+      {
+        path: 'effect',
+        lazy: () => import('@features/Effect')
+      },
+      {
+        path: 'ref',
+        lazy: () => import('@features/Ref')
+      },
+      {
+        path: 'memo',
+        lazy: () => import('@features/Memo')
       }
     ]
   }

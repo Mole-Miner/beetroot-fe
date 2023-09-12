@@ -1,0 +1,19 @@
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.card {
+  height: 400px;
+
+  &--dark {
+    color: white;
+    background-color: black;
+  }
+
+  &--light {
+    color: black;
+    background-color: white;
+  }
+}
