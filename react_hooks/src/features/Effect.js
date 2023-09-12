@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 function Effect() {
-  const [firstCounter, setFirstCounter] = useState(0);
+  const [firstCounter, setFirstCounter] = useState(1);
   const [secondCounter, setSecondCounter] = useState(0);
 
   /* useEffect(() => {
@@ -10,21 +10,22 @@ function Effect() {
         }, 1000);
     });*/
 
-  /* useEffect(() => {
+  /*useEffect(() => {
         setTimeout(() => {
             setFirstCounter((counter) => counter + 1);
         }, 1000);
     }, []);*/
-  /*  useEffect(() => {
-        const timeout = setTimeout(() => {
-            setFirstCounter((counter) => counter + 1);
-        }, 1000);
-        return () => clearTimeout(timeout);
-    }, []);*/
 
   useEffect(() => {
+    const timeout = setTimeout(() => {
+      setFirstCounter((counter) => counter + 1);
+    }, 1000);
+    return () => clearTimeout(timeout);
+  }, []);
+
+  /* useEffect(() => {
     setSecondCounter(() => firstCounter * 10);
-  }, [firstCounter]);
+  }, [firstCounter]);*/
 
   return (
     <>
